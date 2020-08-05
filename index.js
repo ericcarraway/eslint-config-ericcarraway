@@ -1,10 +1,12 @@
 module.exports = {
-  "operator-linebreak": ["error", "after", {
-    "overrides": {
-      "?": "before",
-      ":": "before"
-    }
-  }],
+  "rules": {
+    "operator-linebreak": ["error", "after", {
+      "overrides": {
+        "?": "before",
+        ":": "before"
+      }
+    }],
 
-  "quotes": ["error", "backtick"],
+    "quotes": ["error", "backtick"],
+  }
 };
