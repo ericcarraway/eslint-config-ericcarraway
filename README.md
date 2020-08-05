@@ -1,13 +1,15 @@
 # eslint-config-ericcarraway
 
-### Install
+### 1. Install
 
 ```shell
-$ npm i @percuss.io/eslint-config-ericcarraway
+$ npm i --save-dev @percuss.io/eslint-config-ericcarraway
 ```
 
+_This command will install this package & save it to your project's `devDependencies`._
 
-### Use
+
+### 2. Use
 ```jsonc
 // .eslintrc
 
