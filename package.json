@@ -1,6 +1,6 @@
 {
   "name": "@percuss.io/eslint-config-ericcarraway",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
