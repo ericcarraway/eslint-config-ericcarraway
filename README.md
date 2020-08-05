@@ -11,7 +11,7 @@ _This command will install this package & save it to your project's `devDependen
 
 ### 2. Use
 ```jsonc
-// .eslintrc
+// your project's `.eslintrc` file
 
 {
   "extends": [
