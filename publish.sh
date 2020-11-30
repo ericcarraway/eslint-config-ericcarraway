@@ -1,3 +1,10 @@
+#!/bin/bash
+
+# run this script from package.json via `npm run shipit`
+
+# prevent the script from exiting happily if subsequent commands fail
+set -e
+
 username_expected="ericcarraway"
 username_actual=$(npm whoami)
 
