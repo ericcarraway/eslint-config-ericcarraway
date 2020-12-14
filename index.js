@@ -37,7 +37,7 @@ module.exports = {
     'sort-keys': [
       'error',
       'asc',
-      { caseSensitive: true, natural: false, minKeys: 2 },
+      { caseSensitive: false, minKeys: 2, natural: true },
     ],
 
     // https://eslint.org/docs/rules/wrap-iife
