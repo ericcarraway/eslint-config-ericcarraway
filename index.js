@@ -1,5 +1,10 @@
 module.exports = {
   rules: {
+    // https://eslint.org/docs/rules/curly
+    curly: ["error", "all"],
+
+    "no-const-assign": "error",
+
     // hoisted functions (in the form of function
     // declarations) are useful since they allow us to push
     // cluttering implementation details away from (below)
@@ -28,5 +33,8 @@ module.exports = {
     ],
 
     quotes: ["error", "backtick"],
+
+    // https://eslint.org/docs/rules/wrap-iife
+    "wrap-iife": ["error", "inside"],
   },
 };
