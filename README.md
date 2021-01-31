@@ -1,5 +1,7 @@
 # eslint-config-ericcarraway
 
+Shareable ESLint config for percuss.io JavaScript projects.
+
 ### 1. Install
 
 https://www.npmjs.com/package/@percuss.io/eslint-config-ericcarraway
