@@ -1,12 +1,15 @@
 {
   "name": "@percuss.io/eslint-config-ericcarraway",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "",
   "main": "index.js",
   "scripts": {
     "shipit": "./publish.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ericcarraway/eslint-config-ericcarraway.git"
