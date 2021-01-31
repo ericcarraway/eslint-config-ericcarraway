@@ -2,14 +2,16 @@
 
 ### 1. Install
 
+https://www.npmjs.com/package/@percuss.io/eslint-config-ericcarraway
+
 ```shell
 $ npm i --save-dev @percuss.io/eslint-config-ericcarraway
 ```
 
 _This command will install this package & save it to your project's `devDependencies`._
 
-
 ### 2. Use
+
 ```jsonc
 // your project's `.eslintrc` file
 
