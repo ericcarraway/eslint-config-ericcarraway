@@ -3,6 +3,10 @@ module.exports = {
     // https://eslint.org/docs/rules/curly
     curly: ['error', 'all'],
 
+    // disable this rule for now,
+    // since it doesn't play will with Prettier
+    'implicit-arrow-linebreak': [0],
+
     'no-const-assign': 'error',
 
     // hoisted functions (in the form of function
