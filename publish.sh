@@ -5,6 +5,8 @@
 # prevent the script from exiting happily if subsequent commands fail
 set -e
 
+package_name="@percuss.io/eslint-config-ericcarraway"
+
 username_expected="ericcarraway"
 username_actual=$(npm whoami)
 
@@ -33,3 +35,6 @@ echo "OK"
 # we need to slightly adjust
 # the `npm publish` command
 npm publish --access public
+
+echo "- - -"
+echo "https://www.npmjs.com/package/$package_name"
