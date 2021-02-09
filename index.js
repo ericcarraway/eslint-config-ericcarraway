@@ -7,6 +7,11 @@ module.exports = {
     // since it doesn't play will with Prettier
     'implicit-arrow-linebreak': [0],
 
+    'import/no-default-export': [`error`],
+    'import/prefer-default-export': [0],
+
+    indent: [`error`, 2, { SwitchCase: 1 }],
+
     'no-const-assign': `error`,
 
     // hoisted functions (in the form of function
