@@ -15,6 +15,18 @@ module.exports = {
 
     'no-const-assign': `error`,
 
+    'no-unused-vars': [
+      `error`,
+      {
+        // prefix unused variables with "unused"
+        // followed by a capital letter
+        argsIgnorePattern: `^unused($|[A-Z].*$)`,
+        caughtErrors: `all`,
+        caughtErrorsIgnorePattern: `^unused($|[A-Z].*$)`,
+        varsIgnorePattern: `^unused($|[A-Z].*$)`,
+      },
+    ],
+
     // hoisted functions (in the form of function
     // declarations) are useful since they allow us to push
     // cluttering implementation details away from (below)
