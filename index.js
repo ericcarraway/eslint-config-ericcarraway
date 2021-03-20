@@ -7,6 +7,7 @@ module.exports = {
     // since it doesn't play will with Prettier
     'implicit-arrow-linebreak': [0],
 
+    'import/extensions': [`error`, `ignorePackages`],
     'import/no-default-export': [`error`],
     'import/prefer-default-export': [0],
 
@@ -39,6 +40,17 @@ module.exports = {
     'padding-line-between-statements': [
       `error`,
       { blankLine: `always`, next: `return`, prev: `*` },
+    ],
+
+    'prefer-destructuring': [
+      `error`,
+      {
+        array: false,
+        object: true,
+      },
+      {
+        enforceForRenamedProperties: false,
+      },
     ],
 
     quotes: [`error`, `backtick`],
