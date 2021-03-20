@@ -1,4 +1,6 @@
 module.exports = {
+  plugins: [`import`, `sort-destructure-keys`],
+
   rules: {
     // https://eslint.org/docs/rules/curly
     curly: [`error`, `all`],
@@ -66,6 +68,11 @@ module.exports = {
     ],
 
     quotes: [`error`, `backtick`],
+
+    'sort-destructure-keys/sort-destructure-keys': [
+      `error`,
+      { caseSensitive: false },
+    ],
 
     'sort-keys': [
       `error`,
