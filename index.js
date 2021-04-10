@@ -22,9 +22,11 @@ module.exports = {
       {
         // prefix unused variables with "unused"
         // followed by a capital letter
+        args: `all`,
         argsIgnorePattern: `^unused($|[A-Z].*$)`,
         caughtErrors: `all`,
         caughtErrorsIgnorePattern: `^unused($|[A-Z].*$)`,
+        vars: `all`,
         varsIgnorePattern: `^unused($|[A-Z].*$)`,
       },
     ],
