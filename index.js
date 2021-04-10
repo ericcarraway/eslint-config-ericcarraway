@@ -6,12 +6,12 @@ module.exports = {
     curly: [`error`, `all`],
 
     // disable this rule for now,
-    // since it doesn't play will with Prettier
-    'implicit-arrow-linebreak': [0],
+    // since it doesn't play well with Prettier
+    'implicit-arrow-linebreak': `off`,
 
     'import/extensions': [`error`, `ignorePackages`],
     'import/no-default-export': [`error`],
-    'import/prefer-default-export': [0],
+    'import/prefer-default-export': `off`,
 
     indent: [`error`, 2, { SwitchCase: 1 }],
 
@@ -22,9 +22,11 @@ module.exports = {
       {
         // prefix unused variables with "unused"
         // followed by a capital letter
+        args: `all`,
         argsIgnorePattern: `^unused($|[A-Z].*$)`,
         caughtErrors: `all`,
         caughtErrorsIgnorePattern: `^unused($|[A-Z].*$)`,
+        vars: `all`,
         varsIgnorePattern: `^unused($|[A-Z].*$)`,
       },
     ],
