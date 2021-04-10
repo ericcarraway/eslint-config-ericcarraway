@@ -7,11 +7,11 @@ module.exports = {
 
     // disable this rule for now,
     // since it doesn't play well with Prettier
-    'implicit-arrow-linebreak': [0],
+    'implicit-arrow-linebreak': `off`,
 
     'import/extensions': [`error`, `ignorePackages`],
     'import/no-default-export': [`error`],
-    'import/prefer-default-export': [0],
+    'import/prefer-default-export': `off`,
 
     indent: [`error`, 2, { SwitchCase: 1 }],
 
