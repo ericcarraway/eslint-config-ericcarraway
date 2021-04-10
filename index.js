@@ -6,7 +6,7 @@ module.exports = {
     curly: [`error`, `all`],
 
     // disable this rule for now,
-    // since it doesn't play will with Prettier
+    // since it doesn't play well with Prettier
     'implicit-arrow-linebreak': [0],
 
     'import/extensions': [`error`, `ignorePackages`],
