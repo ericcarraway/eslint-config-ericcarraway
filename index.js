@@ -5,8 +5,7 @@ module.exports = {
     // https://eslint.org/docs/rules/curly
     curly: [`error`, `all`],
 
-    // disable this rule for now,
-    // since it doesn't play well with Prettier
+    'function-paren-newline': `off`,
     'implicit-arrow-linebreak': `off`,
 
     'import/extensions': [`error`, `ignorePackages`],
@@ -41,6 +40,8 @@ module.exports = {
         functions: false,
       },
     ],
+
+    'object-curly-newline': `off`,
 
     'operator-linebreak': [
       `error`,
