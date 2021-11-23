@@ -56,6 +56,7 @@ module.exports = {
     'padding-line-between-statements': [
       `error`,
       { blankLine: `always`, next: `return`, prev: `*` },
+      { blankLine: `always`, next: `throw`, prev: `*` },
     ],
 
     'prefer-destructuring': [
