@@ -14,6 +14,9 @@ module.exports = {
 
     indent: [`error`, 2, { SwitchCase: 1 }],
 
+    // https://github.com/prettier/eslint-config-prettier/blob/main/index.js
+    'newline-per-chained-call': `off`,
+
     'no-const-assign': `error`,
 
     'no-unused-vars': [
