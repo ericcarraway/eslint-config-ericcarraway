@@ -17,7 +17,11 @@ module.exports = {
     // https://github.com/prettier/eslint-config-prettier/blob/main/index.js
     'newline-per-chained-call': `off`,
 
+    'no-await-in-loop': `off`,
+
     'no-const-assign': `error`,
+
+    'no-restricted-syntax': `off`,
 
     'no-unused-vars': [
       `error`,
