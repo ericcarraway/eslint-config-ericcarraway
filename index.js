@@ -19,6 +19,9 @@ module.exports = {
 
     'no-await-in-loop': `off`,
 
+    // doesn't play well with Prettier
+    'no-confusing-arrow': `off`,
+
     'no-const-assign': `error`,
 
     'no-restricted-syntax': `off`,
