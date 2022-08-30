@@ -1,29 +1,19 @@
+const { handledByPrettier } = require(`./handled-by-prettier.js`);
+
 module.exports = {
   plugins: [`import`, `sort-destructure-keys`],
 
   rules: {
+    ...handledByPrettier,
+
     // https://eslint.org/docs/rules/curly
     curly: [`error`, `all`],
-
-    'function-paren-newline': `off`,
-    'implicit-arrow-linebreak': `off`,
 
     'import/extensions': [`error`, `ignorePackages`],
     'import/no-default-export': [`error`],
     'import/prefer-default-export': `off`,
-
-    indent: [`error`, 2, { SwitchCase: 1 }],
-
-    // https://github.com/prettier/eslint-config-prettier/blob/main/index.js
-    'newline-per-chained-call': `off`,
-
     'no-await-in-loop': `off`,
-
-    // doesn't play well with Prettier
-    'no-confusing-arrow': `off`,
-
     'no-const-assign': `error`,
-
     'no-restricted-syntax': `off`,
 
     'no-unused-vars': [
@@ -48,19 +38,6 @@ module.exports = {
       `error`,
       {
         functions: false,
-      },
-    ],
-
-    'object-curly-newline': `off`,
-
-    'operator-linebreak': [
-      `error`,
-      `after`,
-      {
-        overrides: {
-          ':': `before`,
-          '?': `before`,
-        },
       },
     ],
 
@@ -93,8 +70,5 @@ module.exports = {
       `asc`,
       { caseSensitive: false, minKeys: 2, natural: true },
     ],
-
-    // https://eslint.org/docs/rules/wrap-iife
-    'wrap-iife': [`error`, `inside`],
   },
 };
