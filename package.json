@@ -13,6 +13,7 @@
     "eslint-plugin-sort-destructure-keys": "^1.4.0"
   },
   "files": [
+    "handled-by-prettier.js",
     "index.js"
   ],
   "repository": {
