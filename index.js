@@ -12,6 +12,7 @@ module.exports = {
     'import/extensions': [`error`, `ignorePackages`],
     'import/no-default-export': [`error`],
     'import/prefer-default-export': `off`,
+    'newline-after-var': [`error`, `always`],
     'no-await-in-loop': `off`,
     'no-const-assign': `error`,
     'no-restricted-syntax': `off`,
