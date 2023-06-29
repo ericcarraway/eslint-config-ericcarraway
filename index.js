@@ -12,7 +12,7 @@ module.exports = {
     'import/extensions': [`error`, `ignorePackages`],
     'import/no-default-export': [`error`],
     'import/prefer-default-export': `off`,
-    'newline-after-var': [`error`, `always`],
+
     'no-await-in-loop': `off`,
     'no-const-assign': `error`,
     'no-restricted-syntax': `off`,
@@ -46,6 +46,12 @@ module.exports = {
       `error`,
       { blankLine: `always`, next: `return`, prev: `*` },
       { blankLine: `always`, next: `throw`, prev: `*` },
+      { blankLine: `always`, next: `*`, prev: [`const`, `let`, `var`] },
+      {
+        blankLine: `any`,
+        next: [`const`, `let`, `var`],
+        prev: [`const`, `let`, `var`],
+      },
     ],
 
     'prefer-destructuring': [
