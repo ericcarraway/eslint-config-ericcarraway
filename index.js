@@ -16,6 +16,7 @@ module.exports = {
     'no-await-in-loop': `off`,
     'no-const-assign': `error`,
     'no-restricted-syntax': `off`,
+    'no-underscore-dangle': [`error`, { allow: [`_id`] }],
 
     'no-unused-vars': [
       `error`,
