@@ -1,7 +1,7 @@
 const { handledByPrettier } = require(`./handled-by-prettier.js`);
 
 module.exports = {
-  plugins: [`import`, `sort-destructure-keys`],
+  plugins: [`import`, `simple-import-sort`, `sort-destructure-keys`],
 
   rules: {
     ...handledByPrettier,
@@ -68,6 +68,9 @@ module.exports = {
     ],
 
     quotes: [`error`, `backtick`],
+
+    'simple-import-sort/exports': `error`,
+    'simple-import-sort/imports': `error`,
 
     'sort-destructure-keys/sort-destructure-keys': [
       `error`,
