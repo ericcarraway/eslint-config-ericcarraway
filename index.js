@@ -1,6 +1,7 @@
 const { handledByPrettier } = require(`./handled-by-prettier.js`);
 
-module.exports = {
+/** @type {import("eslint").Linter.Config} */
+const config = {
   plugins: [`import`, `simple-import-sort`, `sort-destructure-keys`],
 
   rules: {
@@ -9,6 +10,7 @@ module.exports = {
     // https://eslint.org/docs/rules/curly
     curly: [`error`, `all`],
 
+    'import/consistent-type-specifier-style': [`error`, `prefer-top-level`],
     'import/extensions': [`error`, `ignorePackages`],
     'import/no-default-export': [`error`],
     'import/prefer-default-export': `off`,
@@ -84,3 +86,5 @@ module.exports = {
     ],
   },
 };
+
+module.exports = config;
