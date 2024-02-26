@@ -1,6 +1,6 @@
 {
   "name": "@percuss.io/eslint-config-ericcarraway",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Shareable ESLint config for percuss.io JavaScript projects.",
   "main": "index.js",
   "scripts": {
@@ -8,9 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
-    "eslint": "^8.55.0",
-    "eslint-plugin-import": "^2.29.0",
-    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-simple-import-sort": "^12.0.0",
     "eslint-plugin-sort-destructure-keys": "^1.5.0"
   },
   "files": [
