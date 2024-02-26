@@ -7,6 +7,14 @@ const config = {
   rules: {
     ...handledByPrettier,
 
+    camelcase: [
+      `error`,
+      {
+        allow: [`^todo`, `child_process`, `npm_package_version`],
+        properties: `never`,
+      },
+    ],
+
     // https://eslint.org/docs/rules/curly
     curly: [`error`, `all`],
 
@@ -16,6 +24,14 @@ const config = {
     'import/prefer-default-export': `off`,
 
     'no-await-in-loop': `off`,
+
+    'no-console': [
+      `error`,
+      {
+        allow: [`log`, `warn`, `error`, `table`],
+      },
+    ],
+
     'no-const-assign': `error`,
     'no-restricted-syntax': `off`,
     'no-underscore-dangle': [`error`, { allow: [`_id`] }],
