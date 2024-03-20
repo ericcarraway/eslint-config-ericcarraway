@@ -39,14 +39,14 @@ const config = {
     'no-unused-vars': [
       `error`,
       {
-        // prefix unused variables with "unused"
-        // followed by a capital letter
+        // Prefix unused variables with "unused"
+        // followed by a capital letter.
         args: `all`,
-        argsIgnorePattern: `^unused($|[A-Z].*$)`,
+        argsIgnorePattern: `^unused[A-Z].*$`,
         caughtErrors: `all`,
-        caughtErrorsIgnorePattern: `^unused($|[A-Z].*$)`,
+        caughtErrorsIgnorePattern: `^unused[A-Z].*$`,
         vars: `all`,
-        varsIgnorePattern: `^unused($|[A-Z].*$)`,
+        varsIgnorePattern: `^unused[A-Z].*$`,
       },
     ],
 
