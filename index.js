@@ -2,6 +2,24 @@ const { handledByPrettier } = require(`./handled-by-prettier.js`);
 
 /** @type {import("eslint").Linter.Config} */
 const config = {
+  overrides: [
+    {
+      files: [
+        // Next.js API routes.
+        `*.handler.ts`,
+
+        // Next.js pages.
+        `*.page.tsx`,
+
+        // Storybook stories.
+        `*.stories.tsx`,
+      ],
+      rules: {
+        'import/no-default-export': `off`,
+      },
+    },
+  ],
+
   plugins: [`import`, `simple-import-sort`, `sort-destructure-keys`],
 
   rules: {
@@ -21,6 +39,19 @@ const config = {
     'import/consistent-type-specifier-style': [`error`, `prefer-top-level`],
     'import/extensions': [`error`, `ignorePackages`],
     'import/no-default-export': [`error`],
+
+    'import/no-extraneous-dependencies': [
+      `error`,
+      {
+        devDependencies: [
+          `**/*.spec.js`,
+          `**/*.spec.ts`,
+          `**/*.test.js`,
+          `**/*.test.ts`,
+        ],
+      },
+    ],
+
     'import/prefer-default-export': `off`,
 
     'no-await-in-loop': `off`,
