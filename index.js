@@ -118,6 +118,8 @@ const config = {
 
     quotes: [`error`, `backtick`],
 
+    'require-await': `error`,
+
     'simple-import-sort/exports': `error`,
     'simple-import-sort/imports': `error`,
 
