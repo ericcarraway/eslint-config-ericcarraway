@@ -1,6 +1,6 @@
 {
   "name": "@percuss.io/eslint-config-ericcarraway",
-  "version": "2.1.1",
+  "version": "3.0.0",
   "description": "Shareable ESLint config for percuss.io JavaScript projects.",
   "main": "index.js",
   "scripts": {
