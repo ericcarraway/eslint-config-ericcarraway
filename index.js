@@ -25,6 +25,14 @@ const config = {
   rules: {
     ...handledByPrettier,
 
+    'accessor-pairs': [
+      `error`,
+      {
+        enforceForClassMembers: true,
+        getWithoutSet: false,
+        setWithoutGet: true,
+      },
+    ],
     camelcase: [
       `error`,
       {
@@ -35,6 +43,15 @@ const config = {
 
     // https://eslint.org/docs/rules/curly
     curly: [`error`, `all`],
+
+    'func-name-matching': [
+      `error`,
+      {
+        considerPropertyDescriptor: true,
+      },
+    ],
+
+    'grouped-accessor-pairs': [`error`, `getBeforeSet`],
 
     'import/consistent-type-specifier-style': [`error`, `prefer-top-level`],
     'import/extensions': [`error`, `ignorePackages`],
@@ -54,6 +71,24 @@ const config = {
 
     'import/prefer-default-export': `off`,
 
+    'max-depth': [`warn`, 4],
+    'max-nested-callbacks': [`warn`, 4],
+
+    'max-params': [
+      `warn`,
+      {
+        max: 4,
+      },
+    ],
+
+    'max-statements-per-line': [
+      `error`,
+      {
+        max: 1,
+      },
+    ],
+
+    'no-array-constructor': `error`,
     'no-await-in-loop': `off`,
 
     'no-console': [
@@ -64,8 +99,34 @@ const config = {
     ],
 
     'no-const-assign': `error`,
+    'no-constant-binary-expression': [`error`],
+    'no-constant-condition': [`error`],
+    'no-delete-var': `error`,
+    'no-empty-static-block': [`error`],
+    'no-eq-null': [`error`],
+
+    'no-implicit-coercion': [
+      `error`,
+      {
+        allow: [],
+        boolean: false,
+        number: true,
+        string: true,
+      },
+    ],
+    'no-implicit-globals': [`error`],
+
+    'no-label-var': `error`,
+    'no-lonely-if': `error`,
+    'no-negated-condition': `error`,
+    'no-new-native-nonconstructor': [`error`],
+    'no-object-constructor': [`error`],
     'no-restricted-syntax': `off`,
+    'no-shadow-restricted-names': `error`,
+    'no-undef-init': `error`,
     'no-underscore-dangle': [`error`, { allow: [`_id`] }],
+
+    'no-unmodified-loop-condition': [`error`],
 
     'no-unused-vars': [
       `error`,
@@ -92,6 +153,8 @@ const config = {
       },
     ],
 
+    'no-useless-call': [`error`],
+
     'padding-line-between-statements': [
       `error`,
       { blankLine: `always`, next: `continue`, prev: `*` },
@@ -115,6 +178,9 @@ const config = {
         enforceForRenamedProperties: false,
       },
     ],
+
+    'prefer-object-has-own': `error`,
+    'prefer-object-spread': `error`,
 
     quotes: [`error`, `backtick`],
 
