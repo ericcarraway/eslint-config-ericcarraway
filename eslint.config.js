@@ -36,12 +36,6 @@ export const rules = {
         max: 4,
       },
     ],
-    'max-statements-per-line': [
-      `error`,
-      {
-        max: 1,
-      },
-    ],
     'no-array-constructor': `error`,
     'no-await-in-loop': `off`,
     'no-console': [
@@ -83,19 +77,8 @@ export const rules = {
         functions: false,
       },
     ],
+    'no-unused-vars': `off`,
     'no-useless-call': [`error`],
-    'padding-line-between-statements': [
-      `error`,
-      { blankLine: `always`, next: `continue`, prev: `*` },
-      { blankLine: `always`, next: `return`, prev: `*` },
-      { blankLine: `always`, next: `throw`, prev: `*` },
-      { blankLine: `always`, next: `*`, prev: [`const`, `let`, `var`] },
-      {
-        blankLine: `any`,
-        next: [`const`, `let`, `var`],
-        prev: [`const`, `let`, `var`],
-      },
-    ],
     'prefer-destructuring': [
       `error`,
       {
@@ -108,7 +91,6 @@ export const rules = {
     ],
     'prefer-object-has-own': `error`,
     'prefer-object-spread': `error`,
-    quotes: [`error`, `backtick`],
     'require-await': `error`,
     'sort-keys': [
       `error`,
@@ -132,6 +114,8 @@ export const rules = {
           `**/*.spec.ts`,
           `**/*.test.js`,
           `**/*.test.ts`,
+          `**/eslint.config.js`,
+          `**/eslint.config.mjs`,
         ],
       },
     ],
@@ -141,6 +125,24 @@ export const rules = {
     'import/prefer-default-export': `off`,
   },
   stylistic: {
+    '@stylistic/max-statements-per-line': [
+      `error`,
+      {
+        max: 1,
+      },
+    ],
+    '@stylistic/padding-line-between-statements': [
+      `error`,
+      { blankLine: `always`, next: `continue`, prev: `*` },
+      { blankLine: `always`, next: `return`, prev: `*` },
+      { blankLine: `always`, next: `throw`, prev: `*` },
+      { blankLine: `always`, next: `*`, prev: [`const`, `let`, `var`] },
+      {
+        blankLine: `any`,
+        next: [`const`, `let`, `var`],
+        prev: [`const`, `let`, `var`],
+      },
+    ],
     '@stylistic/quotes': [`error`, `backtick`],
     '@stylistic/semi': [`error`, `always`],
   },
