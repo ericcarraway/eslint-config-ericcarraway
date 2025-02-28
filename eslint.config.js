@@ -19,13 +19,18 @@ export const baseRules = {
       properties: `never`,
     },
   ],
+
+  /** @see https://eslint.org/docs/latest/rules/curly */
   curly: [`error`, `all`],
+
+  /** @see https://eslint.org/docs/latest/rules/func-name-matching */
   'func-name-matching': [
     `error`,
     {
       considerPropertyDescriptor: true,
     },
   ],
+
   'grouped-accessor-pairs': [`error`, `getBeforeSet`],
   'max-depth': [`warn`, 4],
   'max-nested-callbacks': [`warn`, 4],
@@ -123,6 +128,11 @@ export const importRules = {
   'import/no-named-as-default-member': `warn`,
   'import/no-unresolved': `error`,
   'import/prefer-default-export': `off`,
+};
+
+export const simpleImportSortRules = {
+  'simple-import-sort/exports': `error`,
+  'simple-import-sort/imports': `error`,
 };
 
 export const stylisticRules = {
