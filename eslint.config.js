@@ -1,0 +1,182 @@
+export const rules = {
+  base: {
+    'accessor-pairs': [
+      `error`,
+      {
+        enforceForClassMembers: true,
+        getWithoutSet: false,
+        setWithoutGet: true,
+      },
+    ],
+    camelcase: [
+      `error`,
+      {
+        allow: [
+          `^todo`,
+          `child_process`,
+          `npm_package_version`,
+          `unstable_cache`,
+        ],
+        properties: `never`,
+      },
+    ],
+    curly: [`error`, `all`],
+    'func-name-matching': [
+      `error`,
+      {
+        considerPropertyDescriptor: true,
+      },
+    ],
+    'grouped-accessor-pairs': [`error`, `getBeforeSet`],
+    'max-depth': [`warn`, 4],
+    'max-nested-callbacks': [`warn`, 4],
+    'max-params': [
+      `warn`,
+      {
+        max: 4,
+      },
+    ],
+    'max-statements-per-line': [
+      `error`,
+      {
+        max: 1,
+      },
+    ],
+    'no-array-constructor': `error`,
+    'no-await-in-loop': `off`,
+    'no-console': [
+      `error`,
+      {
+        allow: [`log`, `warn`, `error`, `table`],
+      },
+    ],
+    'no-const-assign': `error`,
+    'no-constant-binary-expression': [`error`],
+    'no-constant-condition': [`error`],
+    'no-delete-var': `error`,
+    'no-else-return': `error`,
+    'no-empty-static-block': [`error`],
+    'no-eq-null': [`error`],
+    'no-implicit-coercion': [
+      `error`,
+      {
+        allow: [],
+        boolean: false,
+        number: true,
+        string: true,
+      },
+    ],
+    'no-implicit-globals': [`error`],
+    'no-label-var': `error`,
+    'no-lonely-if': `error`,
+    'no-negated-condition': `error`,
+    'no-new-native-nonconstructor': [`error`],
+    'no-object-constructor': [`error`],
+    'no-restricted-syntax': `off`,
+    'no-shadow-restricted-names': `error`,
+    'no-undef-init': `error`,
+    'no-underscore-dangle': [`error`, { allow: [`_id`] }],
+    'no-unmodified-loop-condition': [`error`],
+    'no-use-before-define': [
+      `error`,
+      {
+        functions: false,
+      },
+    ],
+    'no-useless-call': [`error`],
+    'padding-line-between-statements': [
+      `error`,
+      { blankLine: `always`, next: `continue`, prev: `*` },
+      { blankLine: `always`, next: `return`, prev: `*` },
+      { blankLine: `always`, next: `throw`, prev: `*` },
+      { blankLine: `always`, next: `*`, prev: [`const`, `let`, `var`] },
+      {
+        blankLine: `any`,
+        next: [`const`, `let`, `var`],
+        prev: [`const`, `let`, `var`],
+      },
+    ],
+    'prefer-destructuring': [
+      `error`,
+      {
+        array: false,
+        object: true,
+      },
+      {
+        enforceForRenamedProperties: false,
+      },
+    ],
+    'prefer-object-has-own': `error`,
+    'prefer-object-spread': `error`,
+    quotes: [`error`, `backtick`],
+    'require-await': `error`,
+    'sort-keys': [
+      `error`,
+      `asc`,
+      { caseSensitive: false, minKeys: 2, natural: true },
+    ],
+  },
+  import: {
+    'import/consistent-type-specifier-style': [`error`, `prefer-top-level`],
+    'import/default': `error`,
+    'import/export': `error`,
+    'import/named': `error`,
+    'import/namespace': `error`,
+    'import/no-default-export': [`error`],
+    'import/no-duplicates': `warn`,
+    'import/no-extraneous-dependencies': [
+      `error`,
+      {
+        devDependencies: [
+          `**/*.spec.js`,
+          `**/*.spec.ts`,
+          `**/*.test.js`,
+          `**/*.test.ts`,
+        ],
+      },
+    ],
+    'import/no-named-as-default': `warn`,
+    'import/no-named-as-default-member': `warn`,
+    'import/no-unresolved': `error`,
+    'import/prefer-default-export': `off`,
+  },
+  stylistic: {
+    '@stylistic/quotes': [`error`, `backtick`],
+    '@stylistic/semi': [`error`, `always`],
+  },
+  typescript: {
+    '@typescript-eslint/array-type': `error`,
+    '@typescript-eslint/ban-ts-comment': `warn`,
+    '@typescript-eslint/consistent-type-imports': [
+      `error`,
+      { fixStyle: `separate-type-imports`, prefer: `type-imports` },
+    ],
+    '@typescript-eslint/no-duplicate-enum-values': `error`,
+    '@typescript-eslint/no-empty-object-type': `warn`,
+    '@typescript-eslint/no-explicit-any': `warn`,
+    '@typescript-eslint/no-extra-non-null-assertion': `error`,
+    '@typescript-eslint/no-misused-new': `error`,
+    '@typescript-eslint/no-namespace': `error`,
+    '@typescript-eslint/no-non-null-asserted-optional-chain': `error`,
+    '@typescript-eslint/no-this-alias': `error`,
+    '@typescript-eslint/no-unnecessary-type-constraint': `error`,
+    '@typescript-eslint/no-unsafe-declaration-merging': `error`,
+    '@typescript-eslint/no-unused-vars': [
+      `error`,
+      {
+        args: `all`,
+        argsIgnorePattern: `^unused[A-Z].*$`,
+        caughtErrors: `all`,
+        caughtErrorsIgnorePattern: `^unused[A-Z].*$`,
+        destructuredArrayIgnorePattern: `^unused[A-Z].*$`,
+        ignoreRestSiblings: false,
+        vars: `all`,
+        varsIgnorePattern: `^unused[A-Z].*$`,
+      },
+    ],
+    '@typescript-eslint/prefer-as-const': `error`,
+    '@typescript-eslint/prefer-for-of': `error`,
+    '@typescript-eslint/prefer-literal-enum-member': `error`,
+    '@typescript-eslint/triple-slash-reference': `error`,
+  },
+};
