@@ -149,13 +149,14 @@ export const rules = {
   typescript: {
     '@typescript-eslint/array-type': `error`,
     '@typescript-eslint/ban-ts-comment': `warn`,
+    '@typescript-eslint/consistent-type-definitions': `off`,
     '@typescript-eslint/consistent-type-imports': [
       `error`,
       { fixStyle: `separate-type-imports`, prefer: `type-imports` },
     ],
     '@typescript-eslint/no-duplicate-enum-values': `error`,
     '@typescript-eslint/no-empty-object-type': `warn`,
-    '@typescript-eslint/no-explicit-any': `warn`,
+    '@typescript-eslint/no-explicit-any': `off`,
     '@typescript-eslint/no-extra-non-null-assertion': `error`,
     '@typescript-eslint/no-misused-new': `error`,
     '@typescript-eslint/no-namespace': `error`,
