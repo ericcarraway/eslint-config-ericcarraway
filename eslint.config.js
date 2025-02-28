@@ -1,4 +1,5 @@
 export const baseRules = {
+  /** @see https://eslint.org/docs/latest/rules/accessor-pairs */
   'accessor-pairs': [
     `error`,
     {
@@ -7,6 +8,8 @@ export const baseRules = {
       setWithoutGet: true,
     },
   ],
+
+  /** @see https://eslint.org/docs/latest/rules/camelcase */
   camelcase: [
     `error`,
     {
@@ -31,30 +34,56 @@ export const baseRules = {
     },
   ],
 
+  /** @see https://eslint.org/docs/latest/rules/grouped-accessor-pairs */
   'grouped-accessor-pairs': [`error`, `getBeforeSet`],
+
+  /** @see https://eslint.org/docs/latest/rules/max-depth */
   'max-depth': [`warn`, 4],
+
+  /** @see https://eslint.org/docs/latest/rules/max-nested-callbacks */
   'max-nested-callbacks': [`warn`, 4],
+
+  /** @see https://eslint.org/docs/latest/rules/max-params */
   'max-params': [
     `warn`,
     {
       max: 4,
     },
   ],
+
+  /** @see https://eslint.org/docs/latest/rules/no-array-constructor */
   'no-array-constructor': `error`,
-  'no-await-in-loop': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-console */
   'no-console': [
     `error`,
     {
       allow: [`log`, `warn`, `error`, `table`],
     },
   ],
+
+  /** @see https://eslint.org/docs/latest/rules/no-const-assign */
   'no-const-assign': `error`,
-  'no-constant-binary-expression': [`error`],
-  'no-constant-condition': [`error`],
+
+  /** @see https://eslint.org/docs/latest/rules/no-constant-binary-expression */
+  'no-constant-binary-expression': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-constant-condition */
+  'no-constant-condition': [`error`, { checkLoops: `allExceptWhileTrue` }],
+
+  /** @see https://eslint.org/docs/latest/rules/no-delete-var */
   'no-delete-var': `error`,
-  'no-else-return': `error`,
-  'no-empty-static-block': [`error`],
-  'no-eq-null': [`error`],
+
+  /** @see https://eslint.org/docs/latest/rules/no-else-return */
+  'no-else-return': [`error`, { allowElseIf: false }],
+
+  /** @see https://eslint.org/docs/latest/rules/no-empty-static-block */
+  'no-empty-static-block': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-eq-null */
+  'no-eq-null': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-implicit-coercion */
   'no-implicit-coercion': [
     `error`,
     {
@@ -64,25 +93,49 @@ export const baseRules = {
       string: true,
     },
   ],
-  'no-implicit-globals': [`error`],
+
+  /** @see https://eslint.org/docs/latest/rules/no-implicit-globals */
+  'no-implicit-globals': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-label-var */
   'no-label-var': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-lonely-if */
   'no-lonely-if': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-negated-condition */
   'no-negated-condition': `error`,
-  'no-new-native-nonconstructor': [`error`],
-  'no-object-constructor': [`error`],
-  'no-restricted-syntax': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-new-native-nonconstructor */
+  'no-new-native-nonconstructor': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-object-constructor */
+  'no-object-constructor': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-shadow-restricted-names */
   'no-shadow-restricted-names': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-undef-init */
   'no-undef-init': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-underscore-dangle */
   'no-underscore-dangle': [`error`, { allow: [`_id`] }],
-  'no-unmodified-loop-condition': [`error`],
+
+  /** @see https://eslint.org/docs/latest/rules/no-unmodified-loop-condition */
+  'no-unmodified-loop-condition': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-use-before-define */
   'no-use-before-define': [
     `error`,
     {
       functions: false,
     },
   ],
-  'no-unused-vars': `off`,
-  'no-useless-call': [`error`],
+
+  /** @see https://eslint.org/docs/latest/rules/no-useless-call */
+  'no-useless-call': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/prefer-destructuring */
   'prefer-destructuring': [
     `error`,
     {
@@ -93,14 +146,33 @@ export const baseRules = {
       enforceForRenamedProperties: false,
     },
   ],
+
+  /** @see https://eslint.org/docs/latest/rules/prefer-object-has-own */
   'prefer-object-has-own': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/prefer-object-spread */
   'prefer-object-spread': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/require-await */
   'require-await': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/sort-keys */
   'sort-keys': [
     `error`,
     `asc`,
     { caseSensitive: false, minKeys: 2, natural: true },
   ],
+};
+
+export const disabledBaseRules = {
+  /** @see https://eslint.org/docs/latest/rules/no-await-in-loop */
+  'no-await-in-loop': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-restricted-syntax */
+  'no-restricted-syntax': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-unused-vars */
+  'no-unused-vars': `off`,
 };
 
 export const importRules = {
