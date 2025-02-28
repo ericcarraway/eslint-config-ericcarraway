@@ -4,6 +4,7 @@
   "description": "Shareable ESLint config for percuss.io JavaScript projects.",
   "type": "module",
   "exports": "./eslint.config.js",
+  "types": "./index.d.ts",
   "scripts": {
     "shipit": "./publish.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
