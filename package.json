@@ -2,14 +2,14 @@
   "name": "@percuss.io/eslint-config-ericcarraway",
   "version": "4.1.0",
   "description": "Shareable ESLint config for percuss.io JavaScript projects.",
-  "main": "index.js",
+  "type": "module",
+  "exports": "./eslint.config.js",
   "scripts": {
     "shipit": "./publish.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
-    "handled-by-prettier.js",
-    "index.js"
+    "eslint.config.js"
   ],
   "repository": {
     "type": "git",
