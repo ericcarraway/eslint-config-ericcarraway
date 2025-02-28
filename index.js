@@ -1,5 +1,3 @@
-const { handledByPrettier } = require(`./handled-by-prettier.js`);
-
 /** @type {import("eslint").Linter.Config} */
 const config = {
   overrides: [
@@ -28,29 +26,6 @@ const config = {
   ],
 
   rules: {
-    ...handledByPrettier,
-
-    '@typescript-eslint/array-type': `error`,
-    '@typescript-eslint/ban-types': `error`,
-
-    '@typescript-eslint/consistent-type-imports': [
-      `error`,
-      { fixStyle: `separate-type-imports`, prefer: `type-imports` },
-    ],
-
-    '@typescript-eslint/no-duplicate-enum-values': `error`,
-    '@typescript-eslint/no-extra-non-null-assertion': `error`,
-    '@typescript-eslint/no-misused-new': `error`,
-    '@typescript-eslint/no-namespace': `error`,
-    '@typescript-eslint/no-non-null-asserted-optional-chain': `error`,
-    '@typescript-eslint/no-this-alias': `error`,
-    '@typescript-eslint/no-unnecessary-type-constraint': `error`,
-    '@typescript-eslint/no-unsafe-declaration-merging': `error`,
-    '@typescript-eslint/prefer-as-const': `error`,
-    '@typescript-eslint/prefer-for-of': `error`,
-    '@typescript-eslint/prefer-literal-enum-member': `error`,
-    '@typescript-eslint/triple-slash-reference': `error`,
-
     'accessor-pairs': [
       `error`,
       {
@@ -67,9 +42,6 @@ const config = {
       },
     ],
 
-    // https://eslint.org/docs/rules/curly
-    curly: [`error`, `all`],
-
     'func-name-matching': [
       `error`,
       {
@@ -79,23 +51,7 @@ const config = {
 
     'grouped-accessor-pairs': [`error`, `getBeforeSet`],
 
-    'import/consistent-type-specifier-style': [`error`, `prefer-top-level`],
     'import/extensions': [`error`, `ignorePackages`],
-    'import/no-default-export': [`error`],
-
-    'import/no-extraneous-dependencies': [
-      `error`,
-      {
-        devDependencies: [
-          `**/*.spec.js`,
-          `**/*.spec.ts`,
-          `**/*.test.js`,
-          `**/*.test.ts`,
-        ],
-      },
-    ],
-
-    'import/prefer-default-export': `off`,
 
     'max-depth': [`warn`, 4],
     'max-nested-callbacks': [`warn`, 4],
@@ -208,12 +164,7 @@ const config = {
     'prefer-object-has-own': `error`,
     'prefer-object-spread': `error`,
 
-    quotes: [`error`, `backtick`],
-
     'require-await': `error`,
-
-    'simple-import-sort/exports': `error`,
-    'simple-import-sort/imports': `error`,
 
     'sort-destructure-keys/sort-destructure-keys': [
       `error`,
