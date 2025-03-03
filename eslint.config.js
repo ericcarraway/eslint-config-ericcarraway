@@ -206,9 +206,6 @@ export const importRules = {
   /** @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/group-exports.md */
   'import/group-exports': `off`,
 
-  /** @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/imports-first.md */
-  'import/imports-first': `off`,
-
   /** @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/max-dependencies.md */
   'import/max-dependencies': [
     `off`,
