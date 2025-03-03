@@ -419,23 +419,52 @@ export const stylisticRules = {
 };
 
 export const typescriptRules = {
+  /** @see https://typescript-eslint.io/rules/array-type/ */
   '@typescript-eslint/array-type': `error`,
+
+  /** @see https://typescript-eslint.io/rules/ban-ts-comment/ */
   '@typescript-eslint/ban-ts-comment': `warn`,
+
+  /** @see https://typescript-eslint.io/rules/consistent-type-definitions/ */
   '@typescript-eslint/consistent-type-definitions': `off`,
+
+  /** @see https://typescript-eslint.io/rules/consistent-type-imports/ */
   '@typescript-eslint/consistent-type-imports': [
     `error`,
     { fixStyle: `separate-type-imports`, prefer: `type-imports` },
   ],
+
+  /** @see https://typescript-eslint.io/rules/no-duplicate-enum-values/ */
   '@typescript-eslint/no-duplicate-enum-values': `error`,
+
+  /** @see https://typescript-eslint.io/rules/no-empty-object-type/ */
   '@typescript-eslint/no-empty-object-type': `warn`,
+
+  /** @see https://typescript-eslint.io/rules/no-explicit-any/ */
   '@typescript-eslint/no-explicit-any': `off`,
+
+  /** @see https://typescript-eslint.io/rules/no-extra-non-null-assertion/ */
   '@typescript-eslint/no-extra-non-null-assertion': `error`,
+
+  /** @see https://typescript-eslint.io/rules/no-misused-new/ */
   '@typescript-eslint/no-misused-new': `error`,
+
+  /** @see https://typescript-eslint.io/rules/no-namespace/ */
   '@typescript-eslint/no-namespace': `error`,
+
+  /** @see https://typescript-eslint.io/rules/no-non-null-asserted-optional-chain/ */
   '@typescript-eslint/no-non-null-asserted-optional-chain': `error`,
+
+  /** @see https://typescript-eslint.io/rules/no-this-alias/ */
   '@typescript-eslint/no-this-alias': `error`,
+
+  /** @see https://typescript-eslint.io/rules/no-unnecessary-type-constraint/ */
   '@typescript-eslint/no-unnecessary-type-constraint': `error`,
+
+  /** @see https://typescript-eslint.io/rules/no-unsafe-declaration-merging/ */
   '@typescript-eslint/no-unsafe-declaration-merging': `error`,
+
+  /** @see https://typescript-eslint.io/rules/no-unused-vars/ */
   '@typescript-eslint/no-unused-vars': [
     `error`,
     {
@@ -449,8 +478,16 @@ export const typescriptRules = {
       varsIgnorePattern: `^unused[A-Z].*$`,
     },
   ],
+
+  /** @see https://typescript-eslint.io/rules/prefer-as-const/ */
   '@typescript-eslint/prefer-as-const': `error`,
+
+  /** @see https://typescript-eslint.io/rules/prefer-for-of/ */
   '@typescript-eslint/prefer-for-of': `error`,
+
+  /** @see https://typescript-eslint.io/rules/prefer-literal-enum-member/ */
   '@typescript-eslint/prefer-literal-enum-member': `error`,
+
+  /** @see https://typescript-eslint.io/rules/triple-slash-reference/ */
   '@typescript-eslint/triple-slash-reference': `error`,
 };
