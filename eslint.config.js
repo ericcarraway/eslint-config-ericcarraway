@@ -390,6 +390,90 @@ export const simpleImportSortRules = {
 };
 
 export const stylisticRules = {
+  /** @see https://eslint.style/rules/default/array-bracket-newline */
+  '@stylistic/array-bracket-newline': [`off`, `consistent`],
+
+  /** @see https://eslint.style/rules/default/array-bracket-spacing */
+  '@stylistic/array-bracket-spacing': [`error`, `never`],
+
+  /** @see https://eslint.style/rules/default/array-element-newline */
+  '@stylistic/array-element-newline': [
+    `off`,
+    {
+      minItems: 3,
+      multiline: true,
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/arrow-parens */
+  '@stylistic/arrow-parens': [`error`, `always`],
+
+  /** @see https://eslint.style/rules/default/arrow-spacing */
+  '@stylistic/arrow-spacing': [
+    `error`,
+    {
+      after: true,
+      before: true,
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/block-spacing */
+  '@stylistic/block-spacing': [`error`, `always`],
+
+  /** @see https://eslint.style/rules/default/brace-style */
+  '@stylistic/brace-style': [
+    `error`,
+    `1tbs`,
+    {
+      allowSingleLine: true,
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/comma-dangle */
+  '@stylistic/comma-dangle': [
+    `error`,
+    {
+      arrays: `always-multiline`,
+      exports: `always-multiline`,
+      functions: `always-multiline`,
+      imports: `always-multiline`,
+      objects: `always-multiline`,
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/comma-spacing */
+  '@stylistic/comma-spacing': [
+    `error`,
+    {
+      after: true,
+      before: false,
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/comma-style */
+  '@stylistic/comma-style': [
+    `error`,
+    `last`,
+    {
+      exceptions: {
+        ArrayExpression: false,
+        ArrayPattern: false,
+        ArrowFunctionExpression: false,
+        CallExpression: false,
+        FunctionDeclaration: false,
+        FunctionExpression: false,
+        ImportDeclaration: false,
+        NewExpression: false,
+        ObjectExpression: false,
+        ObjectPattern: false,
+        VariableDeclaration: false,
+      },
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/computed-property-spacing */
+  '@stylistic/computed-property-spacing': [`error`, `never`],
+
   /** @see https://eslint.style/rules/default/max-statements-per-line */
   '@stylistic/max-statements-per-line': [
     `error`,
