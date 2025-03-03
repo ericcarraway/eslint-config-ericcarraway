@@ -63,6 +63,29 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/curly */
   curly: [`error`, `all`],
 
+  /** @see https://eslint.org/docs/latest/rules/default-case */
+  'default-case': [
+    `error`,
+    {
+      commentPattern: `^no default$`,
+    },
+  ],
+
+  /** @see https://eslint.org/docs/latest/rules/default-case-last */
+  'default-case-last': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/default-param-last */
+  'default-param-last': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/dot-notation */
+  'dot-notation': [
+    `error`,
+    {
+      allowKeywords: true,
+      allowPattern: ``,
+    },
+  ],
+
   /** @see https://eslint.org/docs/latest/rules/func-name-matching */
   'func-name-matching': [
     `error`,
@@ -511,6 +534,33 @@ export const stylisticRules = {
   /** @see https://eslint.style/rules/default/computed-property-spacing */
   '@stylistic/computed-property-spacing': [`error`, `never`],
 
+  /** @see https://eslint.style/rules/default/dot-location */
+  '@stylistic/dot-location': [`error`, `property`],
+
+  /** @see https://eslint.style/rules/default/eol-last */
+  '@stylistic/eol-last': [`error`, `always`],
+
+  /** @see https://eslint.style/rules/default/func-call-spacing */
+  '@stylistic/func-call-spacing': [`error`, `never`],
+
+  /** @see https://eslint.style/rules/default/function-call-argument-newline */
+  '@stylistic/function-call-argument-newline': [`error`, `consistent`],
+
+  /** @see https://eslint.style/rules/default/function-paren-newline */
+  '@stylistic/function-paren-newline': [`off`, `multiline-arguments`],
+
+  /** @see https://eslint.style/rules/default/generator-star-spacing */
+  '@stylistic/generator-star-spacing': [
+    `error`,
+    {
+      after: true,
+      before: false,
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/implicit-arrow-linebreak */
+  '@stylistic/implicit-arrow-linebreak': [`off`, `beside`],
+
   /** @see https://eslint.style/rules/default/max-statements-per-line */
   '@stylistic/max-statements-per-line': [
     `error`,
@@ -518,6 +568,7 @@ export const stylisticRules = {
       max: 1,
     },
   ],
+
   /** @see https://eslint.style/rules/default/padding-line-between-statements */
   '@stylistic/padding-line-between-statements': [
     `error`,
