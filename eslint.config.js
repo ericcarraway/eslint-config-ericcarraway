@@ -175,6 +175,7 @@ export const disabledBaseRules = {
   'no-unused-vars': `off`,
 };
 
+/** @see https://github.com/import-js/eslint-plugin-import */
 export const importRules = {
   /** @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/consistent-type-specifier-style.md */
   'import/consistent-type-specifier-style': [`error`, `prefer-top-level`],
@@ -382,18 +383,21 @@ export const importRules = {
   'import/unambiguous': `off`,
 };
 
+/** @see https://github.com/lydell/eslint-plugin-simple-import-sort */
 export const simpleImportSortRules = {
   'simple-import-sort/exports': `error`,
   'simple-import-sort/imports': `error`,
 };
 
 export const stylisticRules = {
+  /** @see https://eslint.style/rules/default/max-statements-per-line */
   '@stylistic/max-statements-per-line': [
     `error`,
     {
       max: 1,
     },
   ],
+  /** @see https://eslint.style/rules/default/padding-line-between-statements */
   '@stylistic/padding-line-between-statements': [
     `error`,
     { blankLine: `always`, next: `continue`, prev: `*` },
@@ -406,7 +410,11 @@ export const stylisticRules = {
       prev: [`const`, `let`, `var`],
     },
   ],
+
+  /** @see https://eslint.style/rules/default/quotes */
   '@stylistic/quotes': [`error`, `backtick`],
+
+  /** @see https://eslint.style/rules/default/semi */
   '@stylistic/semi': [`error`, `always`],
 };
 
