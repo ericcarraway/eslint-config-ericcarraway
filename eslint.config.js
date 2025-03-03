@@ -9,6 +9,28 @@ export const baseRules = {
     },
   ],
 
+  /** @see https://eslint.org/docs/latest/rules/array-callback-return */
+  'array-callback-return': [
+    `error`,
+    {
+      allowImplicit: true,
+      allowVoid: false,
+      checkForEach: false,
+    },
+  ],
+
+  /** @see https://eslint.org/docs/latest/rules/arrow-body-style */
+  'arrow-body-style': [
+    `error`,
+    `as-needed`,
+    {
+      requireReturnForObjectLiteral: false,
+    },
+  ],
+
+  /** @see https://eslint.org/docs/latest/rules/block-scoped-var */
+  'block-scoped-var': `error`,
+
   /** @see https://eslint.org/docs/latest/rules/camelcase */
   camelcase: [
     `error`,
@@ -22,6 +44,21 @@ export const baseRules = {
       properties: `never`,
     },
   ],
+
+  /** @see https://eslint.org/docs/latest/rules/class-methods-use-this */
+  'class-methods-use-this': [
+    `error`,
+    {
+      enforceForClassFields: true,
+      exceptMethods: [],
+    },
+  ],
+
+  /** @see https://eslint.org/docs/latest/rules/consistent-return */
+  'consistent-return': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/constructor-super */
+  'constructor-super': `error`,
 
   /** @see https://eslint.org/docs/latest/rules/curly */
   curly: [`error`, `all`],
