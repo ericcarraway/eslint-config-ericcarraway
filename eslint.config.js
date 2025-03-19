@@ -86,6 +86,18 @@ export const baseRules = {
     },
   ],
 
+  /** @see https://eslint.org/docs/latest/rules/eqeqeq */
+  eqeqeq: [
+    `error`,
+    `always`,
+    {
+      null: `always`,
+    },
+  ],
+
+  /** @see https://eslint.org/docs/latest/rules/for-direction */
+  'for-direction': `error`,
+
   /** @see https://eslint.org/docs/latest/rules/func-name-matching */
   'func-name-matching': [
     `error`,
@@ -604,6 +616,17 @@ export const typescriptRules = {
   '@typescript-eslint/consistent-type-imports': [
     `error`,
     { fixStyle: `separate-type-imports`, prefer: `type-imports` },
+  ],
+
+  /** @see https://typescript-eslint.io/rules/member-ordering */
+  '@typescript-eslint/member-ordering': [
+    `error`,
+    {
+      default: {
+        memberTypes: [`signature`, `field`, `constructor`, `method`],
+        order: `alphabetically-case-insensitive`,
+      },
+    },
   ],
 
   /** @see https://typescript-eslint.io/rules/no-duplicate-enum-values/ */
