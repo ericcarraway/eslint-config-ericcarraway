@@ -245,6 +245,9 @@ export const disabledBaseRules = {
 
   /** @see https://eslint.org/docs/latest/rules/no-unused-vars */
   'no-unused-vars': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/prefer-destructuring */
+  'prefer-destructuring': `off`,
 };
 
 /** @see https://github.com/import-js/eslint-plugin-import */
@@ -676,6 +679,9 @@ export const typescriptRules = {
 
   /** @see https://typescript-eslint.io/rules/prefer-as-const/ */
   '@typescript-eslint/prefer-as-const': `error`,
+
+  /** @see https://typescript-eslint.io/rules/prefer-destructuring/ */
+  '@typescript-eslint/prefer-destructuring': `error`,
 
   /** @see https://typescript-eslint.io/rules/prefer-for-of/ */
   '@typescript-eslint/prefer-for-of': `error`,
