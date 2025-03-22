@@ -202,11 +202,40 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/no-constant-condition */
   'no-constant-condition': [`error`, { checkLoops: `allExceptWhileTrue` }],
 
+  /** @see https://eslint.org/docs/latest/rules/no-constructor-return */
+  'no-constructor-return': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-control-regex */
+  'no-control-regex': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-debugger */
+  'no-debugger': `error`,
+
   /** @see https://eslint.org/docs/latest/rules/no-delete-var */
   'no-delete-var': `error`,
 
+  /** @see https://eslint.org/docs/latest/rules/no-dupe-args */
+  'no-dupe-args': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-dupe-class-members */
+  'no-dupe-class-members': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-dupe-else-if */
+  'no-dupe-else-if': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-dupe-keys */
+  'no-dupe-keys': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-duplicate-case */
+  'no-duplicate-case': `error`,
+
   /** @see https://eslint.org/docs/latest/rules/no-else-return */
-  'no-else-return': [`error`, { allowElseIf: false }],
+  'no-else-return': [
+    `error`,
+    {
+      allowElseIf: false,
+    },
+  ],
 
   /** @see https://eslint.org/docs/latest/rules/no-empty-static-block */
   'no-empty-static-block': `error`,
@@ -318,6 +347,9 @@ export const deprecatedNodeCommonJsRules = {
 export const disabledBaseRules = {
   /** @see https://eslint.org/docs/latest/rules/no-await-in-loop */
   'no-await-in-loop': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-continue */
+  'no-continue': `off`,
 
   /** @see https://eslint.org/docs/latest/rules/no-restricted-syntax */
   'no-restricted-syntax': `off`,
