@@ -841,6 +841,70 @@ export const stylisticRules = {
 
   /** @see https://eslint.style/rules/default/semi-style */
   '@stylistic/semi-style': [`error`, `last`],
+
+  /** @see https://eslint.style/rules/default/space-before-blocks */
+  '@stylistic/space-before-blocks': `error`,
+
+  /** @see https://eslint.style/rules/default/space-before-function-paren */
+  '@stylistic/space-before-function-paren': [
+    `error`,
+    {
+      anonymous: `always`,
+      asyncArrow: `always`,
+      named: `never`,
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/space-in-parens */
+  '@stylistic/space-in-parens': [`error`, `never`],
+
+  /** @see https://eslint.style/rules/default/space-infix-ops */
+  '@stylistic/space-infix-ops': `error`,
+
+  /** @see https://eslint.style/rules/default/space-unary-ops */
+  '@stylistic/space-unary-ops': [
+    `error`,
+    {
+      nonwords: false,
+      overrides: {},
+      words: true,
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/spaced-comment */
+  '@stylistic/spaced-comment': [
+    `error`,
+    `always`,
+    {
+      block: {
+        balanced: true,
+        exceptions: [`-`, `+`],
+        markers: [`=`, `!`, `:`, `::`],
+      },
+      line: {
+        exceptions: [`-`, `+`],
+        markers: [`=`, `!`, `/`],
+      },
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/switch-colon-spacing */
+  '@stylistic/switch-colon-spacing': [
+    `error`,
+    {
+      after: true,
+      before: false,
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/template-curly-spacing */
+  '@stylistic/template-curly-spacing': `error`,
+
+  /** @see https://eslint.style/rules/default/template-tag-spacing */
+  '@stylistic/template-tag-spacing': [`error`, `never`],
+
+  /** @see https://eslint.style/rules/default/yield-star-spacing */
+  '@stylistic/yield-star-spacing': [`error`, `after`],
 };
 
 export const typescriptRules = {
