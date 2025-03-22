@@ -619,6 +619,35 @@ export const stylisticRules = {
   /** @see https://eslint.style/rules/default/jsx-quotes */
   '@stylistic/jsx-quotes': [`error`, `prefer-double`],
 
+  /** @see https://eslint.style/rules/default/key-spacing */
+  '@stylistic/key-spacing': [
+    `error`,
+    {
+      afterColon: true,
+      beforeColon: false,
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/keyword-spacing */
+  '@stylistic/keyword-spacing': [
+    `error`,
+    {
+      after: true,
+      before: true,
+      overrides: {
+        case: {
+          after: true,
+        },
+        return: {
+          after: true,
+        },
+        throw: {
+          after: true,
+        },
+      },
+    },
+  ],
+
   /** @see https://eslint.style/rules/default/linebreak-style */
   '@stylistic/linebreak-style': [`error`, `unix`],
 
@@ -670,6 +699,15 @@ export const stylisticRules = {
 
       /** `true` requires an empty line before line comments. */
       beforeLineComment: true,
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/lines-around-directive */
+  '@stylistic/lines-around-directive': [
+    `error`,
+    {
+      after: `always`,
+      before: `always`,
     },
   ],
 
@@ -995,6 +1033,7 @@ export const typescriptRules = {
   '@typescript-eslint/triple-slash-reference': `error`,
 };
 
+// eslint-disable-next-line import/no-default-export
 export default {
   rules: {
     baseRules,
