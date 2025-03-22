@@ -143,8 +143,47 @@ export const baseRules = {
     },
   ],
 
+  /** @see https://eslint.org/docs/latest/rules/new-cap */
+  'new-cap': [
+    `error`,
+    {
+      capIsNew: false,
+      capIsNewExceptions: [`Immutable.Map`, `Immutable.Set`, `Immutable.List`],
+      newIsCap: true,
+      newIsCapExceptions: [],
+      properties: true,
+    },
+  ],
+
+  /** @see https://eslint.org/docs/latest/rules/no-alert */
+  'no-alert': `warn`,
+
   /** @see https://eslint.org/docs/latest/rules/no-array-constructor */
   'no-array-constructor': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-async-promise-executor */
+  'no-async-promise-executor': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-bitwise */
+  'no-bitwise': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-buffer-constructor */
+  'no-buffer-constructor': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-caller */
+  'no-caller': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-case-declarations */
+  'no-case-declarations': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-class-assign */
+  'no-class-assign': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-compare-neg-zero */
+  'no-compare-neg-zero': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-cond-assign */
+  'no-cond-assign': [`error`, `always`],
 
   /** @see https://eslint.org/docs/latest/rules/no-console */
   'no-console': [
