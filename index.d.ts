@@ -1,4 +1,4 @@
-type SeverityString = 'error' | 'off' | 'warn';
+type SeverityString = `error` | `off` | `warn`;
 type RuleLevelAndOptions = [SeverityString, ...unknown[]];
 type RuleEntry = SeverityString | RuleLevelAndOptions;
 
