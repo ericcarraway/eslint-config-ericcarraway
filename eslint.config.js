@@ -106,8 +106,28 @@ export const baseRules = {
     },
   ],
 
+  /** @see https://eslint.org/docs/latest/rules/func-names */
+  'func-names': `warn`,
+
+  /** @see https://eslint.org/docs/latest/rules/func-style */
+  'func-style': [`off`, `expression`],
+
+  /** @see https://eslint.org/docs/latest/rules/getter-return */
+  'getter-return': [
+    `error`,
+    {
+      allowImplicit: true,
+    },
+  ],
+
   /** @see https://eslint.org/docs/latest/rules/grouped-accessor-pairs */
   'grouped-accessor-pairs': [`error`, `getBeforeSet`],
+
+  /** @see https://eslint.org/docs/latest/rules/guard-for-in */
+  'guard-for-in': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/max-classes-per-file */
+  'max-classes-per-file': [`error`, 1],
 
   /** @see https://eslint.org/docs/latest/rules/max-depth */
   'max-depth': [`warn`, 4],
@@ -232,8 +252,28 @@ export const baseRules = {
   'sort-keys': [
     `error`,
     `asc`,
-    { caseSensitive: false, minKeys: 2, natural: true },
+    {
+      allowLineSeparatedGroups: false,
+      caseSensitive: false,
+      minKeys: 2,
+      natural: true,
+    },
   ],
+
+  yoda: `error`,
+};
+
+/**
+ * The ten Node.js/CommonJS rules in ESLint core have been deprecated and moved to a plugin.
+ * @see https://eslint.org/docs/latest/use/migrating-to-7.0.0#deprecate-node-rules
+ * @deprecated
+ */
+export const deprecatedNodeCommonJsRules = {
+  /**
+   * @see https://eslint.org/docs/latest/rules/global-require
+   * @see https://github.com/eslint-community/eslint-plugin-n
+   */
+  'global-require': `error`,
 };
 
 export const disabledBaseRules = {
@@ -576,11 +616,183 @@ export const stylisticRules = {
   /** @see https://eslint.style/rules/default/implicit-arrow-linebreak */
   '@stylistic/implicit-arrow-linebreak': [`off`, `beside`],
 
+  /** @see https://eslint.style/rules/default/jsx-quotes */
+  '@stylistic/jsx-quotes': [`error`, `prefer-double`],
+
+  /** @see https://eslint.style/rules/default/linebreak-style */
+  '@stylistic/linebreak-style': [`error`, `unix`],
+
+  /** @see https://eslint.style/rules/default/lines-around-comment */
+  '@stylistic/lines-around-comment': [
+    `error`,
+    {
+      /** `true` requires an empty line after block comments. */
+      afterBlockComment: false,
+
+      /** `true` requires an empty line after hashbang comments. */
+      afterHashbangComment: true,
+
+      /** `true` requires an empty line after line comments. */
+      afterLineComment: false,
+
+      /** `true` allows comments to appear at the end of array literals. */
+      allowArrayEnd: true,
+
+      /** `true` allows comments to appear at the start of array literals. */
+      allowArrayStart: true,
+
+      /**
+       * `true` allows comments to appear at the end of block statements,
+       * function bodies, classes, switch statements, and class static blocks.
+       */
+      allowBlockEnd: false,
+
+      /**
+       * `true` allows comments to appear at the start of block statements,
+       * function bodies, classes, switch statements, and class static blocks.
+       */
+      allowBlockStart: true,
+
+      /** `true` allows comments to appear at the end of classes. */
+      allowClassEnd: false,
+
+      /** `true` allows comments to appear at the start of classes. */
+      allowClassStart: true,
+
+      /** `true` allows comments to appear at the end of object literals. */
+      allowObjectEnd: true,
+
+      /** `true` allows comments to appear at the start of object literals. */
+      allowObjectStart: true,
+
+      /** `true` (default) requires an empty line before block comments. */
+      beforeBlockComment: true,
+
+      /** `true` requires an empty line before line comments. */
+      beforeLineComment: true,
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/lines-between-class-members */
+  '@stylistic/lines-between-class-members': [
+    `error`,
+    `always`,
+    {
+      exceptAfterSingleLine: false,
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/max-len */
+  '@stylistic/max-len': [
+    `error`,
+    100,
+    2,
+    {
+      ignoreComments: false,
+      ignoreRegExpLiterals: true,
+      ignoreStrings: true,
+      ignoreTemplateLiterals: true,
+      ignoreUrls: true,
+    },
+  ],
+
   /** @see https://eslint.style/rules/default/max-statements-per-line */
   '@stylistic/max-statements-per-line': [
     `error`,
     {
       max: 1,
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/new-parens */
+  '@stylistic/new-parens': [`error`],
+
+  /** @see https://eslint.style/rules/default/no-extra-semi */
+  '@stylistic/no-extra-semi': [`error`],
+
+  /** @see https://eslint.style/rules/default/no-floating-decimal */
+  '@stylistic/no-floating-decimal': [`error`],
+
+  /** @see https://eslint.style/rules/default/no-mixed-operators */
+  '@stylistic/no-mixed-operators': [
+    `error`,
+    {
+      allowSamePrecedence: false,
+      groups: [
+        [`%`, `**`],
+        [`%`, `+`],
+        [`%`, `-`],
+        [`%`, `*`],
+        [`%`, `/`],
+        [`/`, `*`],
+        [`&`, `|`, `<<`, `>>`, `>>>`],
+        [`==`, `!=`, `===`, `!==`],
+        [`&&`, `||`],
+      ],
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/no-mixed-spaces-and-tabs */
+  '@stylistic/no-mixed-spaces-and-tabs': [`error`],
+
+  /** @see https://eslint.style/rules/default/no-multi-spaces */
+  '@stylistic/no-multi-spaces': [
+    `error`,
+    {
+      ignoreEOLComments: false,
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/no-multiple-empty-lines */
+  '@stylistic/no-multiple-empty-lines': [
+    `error`,
+    {
+      max: 1,
+      maxBOF: 0,
+      maxEOF: 0,
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/no-tabs */
+  '@stylistic/no-tabs': [`error`],
+
+  /** @see https://eslint.style/rules/default/no-trailing-spaces */
+  '@stylistic/no-trailing-spaces': [
+    `error`,
+    {
+      ignoreComments: false,
+      skipBlankLines: false,
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/no-whitespace-before-property */
+  '@stylistic/no-whitespace-before-property': [`error`],
+
+  /** @see https://eslint.style/rules/default/nonblock-statement-body-position */
+  '@stylistic/nonblock-statement-body-position': [
+    `error`,
+    `beside`,
+    {
+      overrides: {},
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/object-curly-spacing */
+  '@stylistic/object-curly-spacing': [`error`, `always`],
+
+  /** @see https://eslint.style/rules/default/one-var-declaration-per-line */
+  '@stylistic/one-var-declaration-per-line': [`error`, `always`],
+
+  /** @see https://eslint.style/rules/default/padded-blocks */
+  '@stylistic/padded-blocks': [
+    `error`,
+    {
+      blocks: `never`,
+      classes: `never`,
+      switches: `never`,
+    },
+    {
+      allowSingleLineBlocks: true,
     },
   ],
 
@@ -598,11 +810,37 @@ export const stylisticRules = {
     },
   ],
 
+  /** @see https://eslint.style/rules/default/quote-props */
+  '@stylistic/quote-props': [
+    `error`,
+    `as-needed`,
+    {
+      keywords: false,
+      numbers: false,
+      unnecessary: true,
+    },
+  ],
+
   /** @see https://eslint.style/rules/default/quotes */
   '@stylistic/quotes': [`error`, `backtick`],
 
+  /** @see https://eslint.style/rules/default/rest-spread-spacing */
+  '@stylistic/rest-spread-spacing': [`error`, `never`],
+
   /** @see https://eslint.style/rules/default/semi */
   '@stylistic/semi': [`error`, `always`],
+
+  /** @see https://eslint.style/rules/default/semi-spacing */
+  '@stylistic/semi-spacing': [
+    `error`,
+    {
+      after: true,
+      before: false,
+    },
+  ],
+
+  /** @see https://eslint.style/rules/default/semi-style */
+  '@stylistic/semi-style': [`error`, `last`],
 };
 
 export const typescriptRules = {
@@ -696,6 +934,7 @@ export const typescriptRules = {
 export default {
   rules: {
     baseRules,
+    deprecatedNodeCommonJsRules,
     disabledBaseRules,
     importRules,
     simpleImportSortRules,
