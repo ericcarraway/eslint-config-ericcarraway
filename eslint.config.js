@@ -692,3 +692,14 @@ export const typescriptRules = {
   /** @see https://typescript-eslint.io/rules/triple-slash-reference/ */
   '@typescript-eslint/triple-slash-reference': `error`,
 };
+
+export default {
+  rules: {
+    baseRules,
+    disabledBaseRules,
+    importRules,
+    simpleImportSortRules,
+    stylisticRules,
+    typescriptRules,
+  },
+};
