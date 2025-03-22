@@ -9,13 +9,15 @@ export declare const simpleImportSortRules: Record<string, RuleEntry>;
 export declare const stylisticRules: Record<string, RuleEntry>;
 export declare const typescriptRules: Record<string, RuleEntry>;
 
-export declare const {
+declare const _default: {
   rules: {
-    baseRules,
-    disabledBaseRules,
-    importRules,
-    simpleImportSortRules,
-    stylisticRules,
-    typescriptRules,
-  },
+    baseRules: Record<string, RuleEntry>;
+    disabledBaseRules: Record<string, RuleEntry>;
+    importRules: Record<string, RuleEntry>;
+    simpleImportSortRules: Record<string, RuleEntry>;
+    stylisticRules: Record<string, RuleEntry>;
+    typescriptRules: Record<string, RuleEntry>;
+  };
 };
+
+export default _default;
