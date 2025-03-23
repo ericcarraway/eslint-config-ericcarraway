@@ -225,6 +225,9 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/no-lonely-if */
   'no-lonely-if': `error`,
 
+  /** @see https://eslint.org/docs/latest/rules/no-loss-of-precision */
+  'no-loss-of-precision': `error`,
+
   /** @see https://eslint.org/docs/latest/rules/no-negated-condition */
   'no-negated-condition': `error`,
 
@@ -343,9 +346,6 @@ export const disabledTypescriptExtensionRules = {
 
   /** @see https://eslint.org/docs/latest/rules/no-loop-func */
   'no-loop-func': `off`,
-
-  /** @see https://eslint.org/docs/latest/rules/no-loss-of-precision */
-  'no-loss-of-precision': `off`,
 
   /** @see https://eslint.org/docs/latest/rules/no-magic-numbers */
   'no-magic-numbers': `off`,
@@ -1166,6 +1166,22 @@ export const typescriptRules = {
    */
   '@typescript-eslint/no-implied-eval': `error`,
 
+  /**
+   * @see https://typescript-eslint.io/rules/no-invalid-this/
+   *
+   * This rule extends the base `no-invalid-this` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/no-invalid-this
+   */
+  '@typescript-eslint/no-invalid-this': `error`,
+
+  /**
+   * @see https://typescript-eslint.io/rules/no-loop-func/
+   *
+   * This rule extends the base `no-loop-func` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/no-loop-func
+   */
+  '@typescript-eslint/no-loop-func': `error`,
+
   /** @see https://typescript-eslint.io/rules/no-misused-new/ */
   '@typescript-eslint/no-misused-new': `error`,
 
@@ -1174,6 +1190,72 @@ export const typescriptRules = {
 
   /** @see https://typescript-eslint.io/rules/no-non-null-asserted-optional-chain/ */
   '@typescript-eslint/no-non-null-asserted-optional-chain': `error`,
+
+  /**
+   * @see https://typescript-eslint.io/rules/no-redeclare/
+   *
+   * This rule extends the base `no-redeclare` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/no-redeclare
+   */
+  '@typescript-eslint/no-redeclare': `error`,
+
+  /**
+   * @see https://typescript-eslint.io/rules/no-restricted-imports/
+   *
+   * This rule extends the base `no-restricted-imports` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/no-restricted-imports
+   */
+  '@typescript-eslint/no-restricted-imports': [
+    `error`,
+    {
+      message: `Please use 'node:assert' instead.`,
+      name: `assert`,
+    },
+    {
+      message: `Please use 'node:child_process' instead.`,
+      name: `child_process`,
+    },
+    {
+      message: `Please use 'node:crypto' instead.`,
+      name: `crypto`,
+    },
+    {
+      message: `Please use 'node:fs' instead.`,
+      name: `fs`,
+    },
+    {
+      message: `Please use 'node:https' instead.`,
+      name: `https`,
+    },
+    {
+      message: `Please use 'node:os' instead.`,
+      name: `os`,
+    },
+    {
+      message: `Please use 'node:path' instead.`,
+      name: `path`,
+    },
+    {
+      message: `Please use 'node:process' instead.`,
+      name: `process`,
+    },
+    {
+      message: `Please use 'node:stream' instead.`,
+      name: `stream`,
+    },
+    {
+      message: `Please use 'node:url' instead.`,
+      name: `url`,
+    },
+    {
+      message: `Please use 'node:util' instead.`,
+      name: `util`,
+    },
+    {
+      message: `Please use 'node:zlib' instead.`,
+      name: `zlib`,
+    },
+  ],
 
   /** @see https://typescript-eslint.io/rules/no-this-alias/ */
   '@typescript-eslint/no-this-alias': `error`,
