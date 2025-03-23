@@ -3,7 +3,12 @@
   "version": "5.0.1-beta.6",
   "description": "Shareable ESLint config for percuss.io JavaScript projects.",
   "type": "module",
-  "exports": "./eslint.config.js",
+  "exports": {
+    ".": {
+      "import": "./eslint.config.js",
+      "types": "./index.d.ts"
+    }
+  },
   "types": "./index.d.ts",
   "scripts": {
     "shipit": "./publish.sh",
