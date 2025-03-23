@@ -211,11 +211,11 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/no-empty-static-block */
   'no-empty-static-block': `error`,
 
-  /** @see https://eslint.org/docs/latest/rules/no-eval */
-  'no-eval': `error`,
-
   /** @see https://eslint.org/docs/latest/rules/no-eq-null */
   'no-eq-null': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-eval */
+  'no-eval': `error`,
 
   /** @see https://eslint.org/docs/latest/rules/no-ex-assign */
   'no-ex-assign': `error`,
@@ -260,6 +260,15 @@ export const baseRules = {
 
   /** @see https://eslint.org/docs/latest/rules/no-implicit-globals */
   'no-implicit-globals': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-import-assign */
+  'no-import-assign': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-inner-declarations */
+  'no-inner-declarations': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-invalid-regexp */
+  'no-invalid-regexp': `error`,
 
   /** @see https://eslint.org/docs/latest/rules/no-label-var */
   'no-label-var': `error`,
@@ -334,6 +343,9 @@ export const disabledBasePersonalRules = {
 
   /** @see https://eslint.org/docs/latest/rules/no-continue */
   'no-continue': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-inline-comments */
+  'no-inline-comments': `off`,
 
   /** @see https://eslint.org/docs/latest/rules/no-restricted-syntax */
   'no-restricted-syntax': `off`,
