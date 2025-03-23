@@ -30,8 +30,23 @@ fi
 
 echo "OK"
 
+# Retrieve the package version using Node.
+version=$(node -p "require('./package.json').version")
+echo "Publishing version: $version"
+
 # Because the repository has a scope, we need to slightly adjust the `npm publish` command.
-npm publish --access public
+# Set the base publish arguments.
+publish_args="--access public"
+
+# If the version string contains "beta", append the beta tag.
+if [[ "$version" == *"beta"* ]]; then
+  publish_args="$publish_args --tag beta"
+fi
+
+echo "Using npm publish args: '$publish_args'"
+
+# Publish the package with the determined arguments.
+npm publish $publish_args
 
 echo "- - -"
 echo "Package published successfully: https://www.npmjs.com/package/${package_name}"
