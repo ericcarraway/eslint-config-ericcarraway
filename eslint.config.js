@@ -249,14 +249,6 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/no-unmodified-loop-condition */
   'no-unmodified-loop-condition': `error`,
 
-  /** @see https://eslint.org/docs/latest/rules/no-use-before-define */
-  'no-use-before-define': [
-    `error`,
-    {
-      functions: false,
-    },
-  ],
-
   /** @see https://eslint.org/docs/latest/rules/no-useless-call */
   'no-useless-call': `error`,
 
@@ -359,6 +351,9 @@ export const disabledTypescriptExtensionRules = {
   /** @see https://eslint.org/docs/latest/rules/no-shadow */
   'no-shadow': `off`,
 
+  /** @see https://eslint.org/docs/latest/rules/no-throw-literal */
+  'no-throw-literal': `off`,
+
   /** @see https://eslint.org/docs/latest/rules/no-unused-expressions */
   'no-unused-expressions': `off`,
 
@@ -370,9 +365,6 @@ export const disabledTypescriptExtensionRules = {
 
   /** @see https://eslint.org/docs/latest/rules/no-useless-constructor */
   'no-useless-constructor': `off`,
-
-  /** @see https://eslint.org/docs/latest/rules/only-throw-error */
-  'only-throw-error': `off`,
 
   /** @see https://eslint.org/docs/latest/rules/prefer-destructuring */
   'prefer-destructuring': `off`,
@@ -1257,6 +1249,14 @@ export const typescriptRules = {
     },
   ],
 
+  /**
+   * @see https://typescript-eslint.io/rules/no-shadow/
+   *
+   * This rule extends the base `no-shadow` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/no-shadow
+   */
+  '@typescript-eslint/no-shadow': `error`,
+
   /** @see https://typescript-eslint.io/rules/no-this-alias/ */
   '@typescript-eslint/no-this-alias': `error`,
 
@@ -1266,7 +1266,20 @@ export const typescriptRules = {
   /** @see https://typescript-eslint.io/rules/no-unsafe-declaration-merging/ */
   '@typescript-eslint/no-unsafe-declaration-merging': `error`,
 
-  /** @see https://typescript-eslint.io/rules/no-unused-vars/ */
+  /**
+   * @see https://typescript-eslint.io/rules/no-unused-expressions/
+   *
+   * This rule extends the base `no-unused-expressions` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/no-unused-expressions
+   */
+  '@typescript-eslint/no-unused-expressions': `error`,
+
+  /**
+   * @see https://typescript-eslint.io/rules/no-unused-vars/
+   *
+   * This rule extends the base `no-unused-vars` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/no-unused-vars
+   */
   '@typescript-eslint/no-unused-vars': [
     `error`,
     {
@@ -1281,10 +1294,44 @@ export const typescriptRules = {
     },
   ],
 
+  /**
+   * @see https://typescript-eslint.io/rules/no-use-before-define/
+   *
+   * This rule extends the base `no-use-before-define` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/no-use-before-define
+   */
+  '@typescript-eslint/no-use-before-define': [
+    `error`,
+    {
+      functions: false,
+    },
+  ],
+
+  /**
+   * @see https://typescript-eslint.io/rules/no-useless-constructor/
+   *
+   * This rule extends the base `no-useless-constructor` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/no-useless-constructor
+   */
+  '@typescript-eslint/no-useless-constructor': `error`,
+
+  /**
+   * @see https://typescript-eslint.io/rules/only-throw-error/
+   *
+   * This rule extends the base `no-throw-literal` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/no-throw-literal
+   */
+  '@typescript-eslint/only-throw-error': `error`,
+
   /** @see https://typescript-eslint.io/rules/prefer-as-const/ */
   '@typescript-eslint/prefer-as-const': `error`,
 
-  /** @see https://typescript-eslint.io/rules/prefer-destructuring/ */
+  /**
+   * @see https://typescript-eslint.io/rules/prefer-destructuring/
+   *
+   * This rule extends the base `prefer-destructuring` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/prefer-destructuring
+   */
   '@typescript-eslint/prefer-destructuring': [
     `error`,
     {
@@ -1302,7 +1349,20 @@ export const typescriptRules = {
   /** @see https://typescript-eslint.io/rules/prefer-literal-enum-member/ */
   '@typescript-eslint/prefer-literal-enum-member': `error`,
 
-  /** @see https://typescript-eslint.io/rules/require-await */
+  /**
+   * @see https://typescript-eslint.io/rules/prefer-promise-reject-errors/
+   *
+   * This rule extends the base `prefer-promise-reject-errors` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/prefer-promise-reject-errors
+   */
+  '@typescript-eslint/prefer-promise-reject-errors': `error`,
+
+  /**
+   * @see https://typescript-eslint.io/rules/require-await/
+   *
+   * This rule extends the base `require-await` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/require-await
+   */
   '@typescript-eslint/require-await': `error`,
 
   /** @see https://typescript-eslint.io/rules/triple-slash-reference/ */
