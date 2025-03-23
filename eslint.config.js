@@ -199,11 +199,52 @@ export const baseRules = {
     },
   ],
 
+  /** @see https://eslint.org/docs/latest/rules/no-empty */
+  'no-empty': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-empty-character-class */
+  'no-empty-character-class': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-empty-pattern */
+  'no-empty-pattern': `error`,
+
   /** @see https://eslint.org/docs/latest/rules/no-empty-static-block */
   'no-empty-static-block': `error`,
 
+  /** @see https://eslint.org/docs/latest/rules/no-eval */
+  'no-eval': `error`,
+
   /** @see https://eslint.org/docs/latest/rules/no-eq-null */
   'no-eq-null': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-ex-assign */
+  'no-ex-assign': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-extend-native */
+  'no-extend-native': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-extra-bind */
+  'no-extra-bind': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-extra-boolean-cast */
+  'no-extra-boolean-cast': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-extra-label */
+  'no-extra-label': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-fallthrough */
+  'no-fallthrough': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-func-assign */
+  'no-func-assign': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-global-assign */
+  'no-global-assign': [
+    `error`,
+    {
+      exceptions: [],
+    },
+  ],
 
   /** @see https://eslint.org/docs/latest/rules/no-implicit-coercion */
   'no-implicit-coercion': [
@@ -211,6 +252,7 @@ export const baseRules = {
     {
       allow: [],
       boolean: false,
+      disallowTemplateShorthand: false,
       number: true,
       string: true,
     },
@@ -747,7 +789,7 @@ export const stylisticRules = {
 
   /** @see https://eslint.style/rules/default/lines-around-comment */
   '@stylistic/lines-around-comment': [
-    `error`,
+    `warn`,
     {
       /** `true` requires an empty line after block comments. */
       afterBlockComment: false,
