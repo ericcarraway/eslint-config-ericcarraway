@@ -4,7 +4,7 @@ type RuleEntry = SeverityString | RuleLevelAndOptions;
 
 export declare const baseRules: Record<string, RuleEntry>;
 export declare const deprecatedNodeCommonJsRules: Record<string, RuleEntry>;
-export declare const disabledBaseRules: Record<string, RuleEntry>;
+export declare const disabledBasePersonalRules: Record<string, RuleEntry>;
 export declare const disabledTypescriptExtensionRules: Record<
   string,
   RuleEntry
@@ -19,7 +19,7 @@ declare const _default: {
   rules: {
     baseRules: Record<string, RuleEntry>;
     deprecatedNodeCommonJsRules: Record<string, RuleEntry>;
-    disabledBaseRules: Record<string, RuleEntry>;
+    disabledBasePersonalRules: Record<string, RuleEntry>;
     disabledTypescriptExtensionRules: Record<string, RuleEntry>;
     disabledTypescriptPersonalRules: Record<string, RuleEntry>;
     importRules: Record<string, RuleEntry>;

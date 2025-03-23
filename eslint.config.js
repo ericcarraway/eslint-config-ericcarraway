@@ -286,7 +286,7 @@ export const deprecatedNodeCommonJsRules = {
   'global-require': `error`,
 };
 
-export const disabledBaseRules = {
+export const disabledBasePersonalRules = {
   /** @see https://eslint.org/docs/latest/rules/no-await-in-loop */
   'no-await-in-loop': `off`,
 
@@ -378,6 +378,8 @@ export const disabledTypescriptExtensionRules = {
 
 export const disabledTypescriptPersonalRules = {
   '@typescript-eslint/no-unsafe-assignment': `off`,
+  '@typescript-eslint/no-unsafe-call': `off`,
+  '@typescript-eslint/no-unsafe-member-access': `off`,
   '@typescript-eslint/prefer-nullish-coalescing': `off`,
   '@typescript-eslint/prefer-regexp-exec': `off`,
 };
@@ -1422,7 +1424,7 @@ export default {
   rules: {
     baseRules,
     deprecatedNodeCommonJsRules,
-    disabledBaseRules,
+    disabledBasePersonalRules,
     disabledTypescriptExtensionRules,
     disabledTypescriptPersonalRules,
     importRules,
