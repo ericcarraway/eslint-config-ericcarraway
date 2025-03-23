@@ -1369,6 +1369,35 @@ export const typescriptRules = {
    */
   '@typescript-eslint/require-await': `error`,
 
+  /**
+   * @see https://typescript-eslint.io/rules/restrict-template-expressions/
+   */
+  '@typescript-eslint/restrict-template-expressions': [
+    `error`,
+    {
+      /** Whether to allow `any` typed values in template expressions. */
+      allowAny: false,
+
+      /** Whether to allow `array` typed values in template expressions. */
+      allowArray: false,
+
+      /** Whether to allow `boolean` typed values in template expressions. */
+      allowBoolean: false,
+
+      /** Whether to allow `never` typed values in template expressions. */
+      allowNever: false,
+
+      /** Whether to allow `nullish` typed values in template expressions. */
+      allowNullish: false,
+
+      /** Whether to allow `number` typed values in template expressions. */
+      allowNumber: true,
+
+      /** Whether to allow `regexp` typed values in template expressions. */
+      allowRegExp: false,
+    },
+  ],
+
   /** @see https://typescript-eslint.io/rules/triple-slash-reference/ */
   '@typescript-eslint/triple-slash-reference': `error`,
 };
