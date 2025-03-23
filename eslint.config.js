@@ -376,6 +376,10 @@ export const disabledTypescriptExtensionRules = {
   'require-await': `off`,
 };
 
+export const disabledTypescriptPersonalRules = {
+  '@typescript-eslint/prefer-nullish-coalescing': `off`,
+};
+
 /** @see https://github.com/import-js/eslint-plugin-import */
 export const importRules = {
   /** @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/consistent-type-specifier-style.md */
@@ -1376,6 +1380,7 @@ export default {
     deprecatedNodeCommonJsRules,
     disabledBaseRules,
     disabledTypescriptExtensionRules,
+    disabledTypescriptPersonalRules,
     importRules,
     simpleImportSortRules,
     stylisticRules,
