@@ -62,8 +62,8 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/default-case-last */
   'default-case-last': `error`,
 
-  /** @see https://eslint.org/docs/latest/rules/dot-notation */
-  'dot-notation': [
+  /** @see https://typescript-eslint.io/rules/dot-notation/ */
+  '@typescript-eslint/dot-notation': [
     `error`,
     {
       allowKeywords: true,
@@ -120,14 +120,6 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/max-nested-callbacks */
   'max-nested-callbacks': [`warn`, 4],
 
-  /** @see https://eslint.org/docs/latest/rules/max-params */
-  'max-params': [
-    `warn`,
-    {
-      max: 4,
-    },
-  ],
-
   /** @see https://eslint.org/docs/latest/rules/new-cap */
   'new-cap': [
     `error`,
@@ -143,8 +135,10 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/no-alert */
   'no-alert': `warn`,
 
-  /** @see https://eslint.org/docs/latest/rules/no-array-constructor */
-  'no-array-constructor': `error`,
+  /**
+   * @see https://eslint.org/docs/latest/rules/no-array-constructor
+   */
+  '@typescript-eslint/no-array-constructor': `error`,
 
   /** @see https://eslint.org/docs/latest/rules/no-async-promise-executor */
   'no-async-promise-executor': `error`,
@@ -202,8 +196,10 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/no-dupe-args */
   'no-dupe-args': `error`,
 
-  /** @see https://eslint.org/docs/latest/rules/no-dupe-class-members */
-  'no-dupe-class-members': `error`,
+  /**
+   * @see https://eslint.org/docs/latest/rules/no-dupe-class-members
+   */
+  '@typescript-eslint/no-dupe-class-members': `error`,
 
   /** @see https://eslint.org/docs/latest/rules/no-dupe-else-if */
   'no-dupe-else-if': `error`,
@@ -1084,6 +1080,17 @@ export const typescriptRules = {
   /** @see https://typescript-eslint.io/rules/default-param-last/ */
   '@typescript-eslint/default-param-last': `error`,
 
+  /** @see https://typescript-eslint.io/rules/init-declarations/ */
+  '@typescript-eslint/init-declarations': [`error`, `always`],
+
+  /** @see https://typescript-eslint.io/rules/max-params/ */
+  '@typescript-eslint/max-params': [
+    `warn`,
+    {
+      max: 4,
+    },
+  ],
+
   /** @see https://typescript-eslint.io/rules/member-ordering/ */
   '@typescript-eslint/member-ordering': [
     `error`,
@@ -1097,6 +1104,14 @@ export const typescriptRules = {
 
   /** @see https://typescript-eslint.io/rules/no-duplicate-enum-values/ */
   '@typescript-eslint/no-duplicate-enum-values': `error`,
+
+  /**
+   * @see https://typescript-eslint.io/rules/no-empty-function/
+   *
+   * This rule extends the base `no-empty-function` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/no-empty-function
+   */
+  '@typescript-eslint/no-empty-function': `error`,
 
   /** @see https://typescript-eslint.io/rules/no-empty-object-type/ */
   '@typescript-eslint/no-empty-object-type': `warn`,
