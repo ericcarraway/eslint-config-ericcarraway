@@ -327,14 +327,19 @@ export const baseRules = {
 /**
  * The ten Node.js/CommonJS rules in ESLint core have been deprecated and moved to a plugin.
  * @see https://eslint.org/docs/latest/use/migrating-to-7.0.0#deprecate-node-rules
+ * @see https://github.com/eslint-community/eslint-plugin-n
+ *
  * @deprecated
  */
 export const deprecatedNodeCommonJsRules = {
-  /**
-   * @see https://eslint.org/docs/latest/rules/global-require
-   * @see https://github.com/eslint-community/eslint-plugin-n
-   */
+  /** @see https://eslint.org/docs/latest/rules/global-require */
   'global-require': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-new-require */
+  'no-new-require': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-path-concat */
+  'no-path-concat': `error`,
 };
 
 export const disabledBasePersonalRules = {
@@ -748,6 +753,9 @@ export const stylisticRules = {
 
   /** @see https://eslint.style/rules/default/function-call-argument-newline */
   '@stylistic/function-call-argument-newline': [`error`, `consistent`],
+
+  /** @see https://eslint.style/rules/default/function-call-spacing */
+  '@stylistic/function-call-spacing': [`error`, `never`],
 
   /** @see https://eslint.style/rules/default/function-paren-newline */
   '@stylistic/function-paren-newline': [`off`, `multiline-arguments`],
