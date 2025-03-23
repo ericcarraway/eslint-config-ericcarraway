@@ -62,15 +62,6 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/default-case-last */
   'default-case-last': `error`,
 
-  /** @see https://typescript-eslint.io/rules/dot-notation/ */
-  '@typescript-eslint/dot-notation': [
-    `error`,
-    {
-      allowKeywords: true,
-      allowPattern: ``,
-    },
-  ],
-
   /** @see https://eslint.org/docs/latest/rules/eqeqeq */
   eqeqeq: [
     `error`,
@@ -135,11 +126,6 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/no-alert */
   'no-alert': `warn`,
 
-  /**
-   * @see https://eslint.org/docs/latest/rules/no-array-constructor
-   */
-  '@typescript-eslint/no-array-constructor': `error`,
-
   /** @see https://eslint.org/docs/latest/rules/no-async-promise-executor */
   'no-async-promise-executor': `error`,
 
@@ -195,11 +181,6 @@ export const baseRules = {
 
   /** @see https://eslint.org/docs/latest/rules/no-dupe-args */
   'no-dupe-args': `error`,
-
-  /**
-   * @see https://eslint.org/docs/latest/rules/no-dupe-class-members
-   */
-  '@typescript-eslint/no-dupe-class-members': `error`,
 
   /** @see https://eslint.org/docs/latest/rules/no-dupe-else-if */
   'no-dupe-else-if': `error`,
@@ -1056,7 +1037,12 @@ export const typescriptRules = {
   /** @see https://typescript-eslint.io/rules/ban-ts-comment/ */
   '@typescript-eslint/ban-ts-comment': `warn`,
 
-  /** @see https://typescript-eslint.io/rules/class-methods-use-this/ */
+  /**
+   * @see https://typescript-eslint.io/rules/class-methods-use-this/
+   *
+   * This rule extends the base `class-methods-use-this` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/class-methods-use-this
+   */
   '@typescript-eslint/class-methods-use-this': [
     `error`,
     {
@@ -1065,7 +1051,12 @@ export const typescriptRules = {
     },
   ],
 
-  /** @see https://typescript-eslint.io/rules/consistent-return/ */
+  /**
+   * @see https://typescript-eslint.io/rules/consistent-return/
+   *
+   * This rule extends the base `consistent-return` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/consistent-return
+   */
   '@typescript-eslint/consistent-return': `error`,
 
   /** @see https://typescript-eslint.io/rules/consistent-type-definitions/ */
@@ -1077,13 +1068,42 @@ export const typescriptRules = {
     { fixStyle: `separate-type-imports`, prefer: `type-imports` },
   ],
 
-  /** @see https://typescript-eslint.io/rules/default-param-last/ */
+  /**
+   * @see https://typescript-eslint.io/rules/default-param-last/
+   *
+   * This rule extends the base `default-param-last` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/default-param-last
+   */
   '@typescript-eslint/default-param-last': `error`,
 
-  /** @see https://typescript-eslint.io/rules/init-declarations/ */
+  /**
+   * @see https://typescript-eslint.io/rules/dot-notation/
+   *
+   * This rule extends the base `dot-notation` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/dot-notation
+   */
+  '@typescript-eslint/dot-notation': [
+    `error`,
+    {
+      allowKeywords: true,
+      allowPattern: ``,
+    },
+  ],
+
+  /**
+   * @see https://typescript-eslint.io/rules/init-declarations/
+   *
+   * This rule extends the base `init-declarations` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/init-declarations
+   */
   '@typescript-eslint/init-declarations': [`error`, `always`],
 
-  /** @see https://typescript-eslint.io/rules/max-params/ */
+  /**
+   * @see https://typescript-eslint.io/rules/max-params/
+   *
+   * This rule extends the base `max-params` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/max-params
+   */
   '@typescript-eslint/max-params': [
     `warn`,
     {
@@ -1101,6 +1121,22 @@ export const typescriptRules = {
       },
     },
   ],
+
+  /**
+   * @see https://typescript-eslint.io/rules/no-array-constructor/
+   *
+   * This rule extends the base `no-array-constructor` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/no-array-constructor
+   */
+  '@typescript-eslint/no-array-constructor': `error`,
+
+  /**
+   * @see https://typescript-eslint.io/rules/no-dupe-class-members/
+   *
+   * This rule extends the base `no-dupe-class-members` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/no-dupe-class-members
+   */
+  '@typescript-eslint/no-dupe-class-members': `error`,
 
   /** @see https://typescript-eslint.io/rules/no-duplicate-enum-values/ */
   '@typescript-eslint/no-duplicate-enum-values': `error`,
@@ -1121,6 +1157,14 @@ export const typescriptRules = {
 
   /** @see https://typescript-eslint.io/rules/no-extra-non-null-assertion/ */
   '@typescript-eslint/no-extra-non-null-assertion': `error`,
+
+  /**
+   * @see https://typescript-eslint.io/rules/no-implied-eval/
+   *
+   * This rule extends the base `no-implied-eval` rule from ESLint core.
+   * @see https://eslint.org/docs/latest/rules/no-implied-eval
+   */
+  '@typescript-eslint/no-implied-eval': `error`,
 
   /** @see https://typescript-eslint.io/rules/no-misused-new/ */
   '@typescript-eslint/no-misused-new': `error`,
