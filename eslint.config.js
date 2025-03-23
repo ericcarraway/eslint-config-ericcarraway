@@ -377,7 +377,9 @@ export const disabledTypescriptExtensionRules = {
 };
 
 export const disabledTypescriptPersonalRules = {
+  '@typescript-eslint/no-unsafe-assignment': `off`,
   '@typescript-eslint/prefer-nullish-coalescing': `off`,
+  '@typescript-eslint/prefer-regexp-exec': `off`,
 };
 
 /** @see https://github.com/import-js/eslint-plugin-import */
@@ -784,6 +786,8 @@ export const stylisticRules = {
       /** `true` allows comments to appear at the start of object literals. */
       allowObjectStart: true,
 
+      applyDefaultIgnorePatterns: true,
+
       /** `true` (default) requires an empty line before block comments. */
       beforeBlockComment: true,
 
@@ -1180,6 +1184,17 @@ export const typescriptRules = {
 
   /** @see https://typescript-eslint.io/rules/no-misused-new/ */
   '@typescript-eslint/no-misused-new': `error`,
+
+  /** @see https://typescript-eslint.io/rules/no-misused-promises/ */
+  '@typescript-eslint/no-misused-promises': [
+    `error`,
+    {
+      checksVoidReturn: {
+        arguments: true,
+        attributes: false,
+      },
+    },
+  ],
 
   /** @see https://typescript-eslint.io/rules/no-namespace/ */
   '@typescript-eslint/no-namespace': `error`,
