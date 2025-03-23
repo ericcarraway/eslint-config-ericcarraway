@@ -361,6 +361,10 @@ export const disabledBaseRules = {
   'prefer-destructuring': `off`,
 };
 
+export const disabledTypescriptRules = {
+  '@typescript-eslint/prefer-nullish-coalescing': `off`,
+};
+
 /** @see https://github.com/import-js/eslint-plugin-import */
 export const importRules = {
   /** @see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/consistent-type-specifier-style.md */
@@ -1110,6 +1114,7 @@ export default {
     baseRules,
     deprecatedNodeCommonJsRules,
     disabledBaseRules,
+    disabledTypescriptRules,
     importRules,
     simpleImportSortRules,
     stylisticRules,

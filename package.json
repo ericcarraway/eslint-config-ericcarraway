@@ -10,7 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
-    "eslint.config.js"
+    "eslint.config.js",
+    "index.d.ts"
   ],
   "repository": {
     "type": "git",
