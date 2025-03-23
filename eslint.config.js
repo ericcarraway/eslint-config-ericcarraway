@@ -45,18 +45,6 @@ export const baseRules = {
     },
   ],
 
-  /** @see https://eslint.org/docs/latest/rules/class-methods-use-this */
-  'class-methods-use-this': [
-    `error`,
-    {
-      enforceForClassFields: true,
-      exceptMethods: [],
-    },
-  ],
-
-  /** @see https://eslint.org/docs/latest/rules/consistent-return */
-  'consistent-return': `error`,
-
   /** @see https://eslint.org/docs/latest/rules/constructor-super */
   'constructor-super': `error`,
 
@@ -73,9 +61,6 @@ export const baseRules = {
 
   /** @see https://eslint.org/docs/latest/rules/default-case-last */
   'default-case-last': `error`,
-
-  /** @see https://eslint.org/docs/latest/rules/default-param-last */
-  'default-param-last': `error`,
 
   /** @see https://eslint.org/docs/latest/rules/dot-notation */
   'dot-notation': [
@@ -295,26 +280,11 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/no-useless-call */
   'no-useless-call': `error`,
 
-  /** @see https://eslint.org/docs/latest/rules/prefer-destructuring */
-  'prefer-destructuring': [
-    `error`,
-    {
-      array: false,
-      object: true,
-    },
-    {
-      enforceForRenamedProperties: false,
-    },
-  ],
-
   /** @see https://eslint.org/docs/latest/rules/prefer-object-has-own */
   'prefer-object-has-own': `error`,
 
   /** @see https://eslint.org/docs/latest/rules/prefer-object-spread */
   'prefer-object-spread': `error`,
-
-  /** @see https://eslint.org/docs/latest/rules/require-await */
-  'require-await': `error`,
 
   /** @see https://eslint.org/docs/latest/rules/sort-keys */
   'sort-keys': [
@@ -353,16 +323,88 @@ export const disabledBaseRules = {
 
   /** @see https://eslint.org/docs/latest/rules/no-restricted-syntax */
   'no-restricted-syntax': `off`,
+};
+
+/**
+ * These core ESLint rules must be disabled because they do not support TypeScript syntax.
+ * We'll disable these rules here then enable their corresponding TypeScript extension rules below.
+ * @see https://typescript-eslint.io/rules#extension-rules
+ */
+export const disabledTypescriptExtensionRules = {
+  /** @see https://eslint.org/docs/latest/rules/class-methods-use-this */
+  'class-methods-use-this': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/consistent-return */
+  'consistent-return': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/default-param-last */
+  'default-param-last': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/dot-notation */
+  'dot-notation': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/init-declarations */
+  'init-declarations': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/max-params */
+  'max-params': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-array-constructor */
+  'no-array-constructor': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-dupe-class-members */
+  'no-dupe-class-members': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-empty-function */
+  'no-empty-function': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-implied-eval */
+  'no-implied-eval': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-invalid-this */
+  'no-invalid-this': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-loop-func */
+  'no-loop-func': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-loss-of-precision */
+  'no-loss-of-precision': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-magic-numbers */
+  'no-magic-numbers': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-redeclare */
+  'no-redeclare': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-restricted-imports */
+  'no-restricted-imports': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-shadow */
+  'no-shadow': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-unused-expressions */
+  'no-unused-expressions': `off`,
 
   /** @see https://eslint.org/docs/latest/rules/no-unused-vars */
   'no-unused-vars': `off`,
 
+  /** @see https://eslint.org/docs/latest/rules/no-use-before-define */
+  'no-use-before-define': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-useless-constructor */
+  'no-useless-constructor': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/only-throw-error */
+  'only-throw-error': `off`,
+
   /** @see https://eslint.org/docs/latest/rules/prefer-destructuring */
   'prefer-destructuring': `off`,
-};
 
-export const disabledTypescriptRules = {
-  '@typescript-eslint/prefer-nullish-coalescing': `off`,
+  /** @see https://eslint.org/docs/latest/rules/prefer-promise-reject-errors */
+  'prefer-promise-reject-errors': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/require-await */
+  'require-await': `off`,
 };
 
 /** @see https://github.com/import-js/eslint-plugin-import */
@@ -777,15 +819,6 @@ export const stylisticRules = {
     },
   ],
 
-  /** @see https://eslint.style/rules/default/lines-around-directive */
-  '@stylistic/lines-around-directive': [
-    `error`,
-    {
-      after: `always`,
-      before: `always`,
-    },
-  ],
-
   /** @see https://eslint.style/rules/default/lines-between-class-members */
   '@stylistic/lines-between-class-members': [
     `error`,
@@ -1027,6 +1060,18 @@ export const typescriptRules = {
   /** @see https://typescript-eslint.io/rules/ban-ts-comment/ */
   '@typescript-eslint/ban-ts-comment': `warn`,
 
+  /** @see https://typescript-eslint.io/rules/class-methods-use-this/ */
+  '@typescript-eslint/class-methods-use-this': [
+    `error`,
+    {
+      enforceForClassFields: true,
+      exceptMethods: [],
+    },
+  ],
+
+  /** @see https://typescript-eslint.io/rules/consistent-return/ */
+  '@typescript-eslint/consistent-return': `error`,
+
   /** @see https://typescript-eslint.io/rules/consistent-type-definitions/ */
   '@typescript-eslint/consistent-type-definitions': `off`,
 
@@ -1036,7 +1081,10 @@ export const typescriptRules = {
     { fixStyle: `separate-type-imports`, prefer: `type-imports` },
   ],
 
-  /** @see https://typescript-eslint.io/rules/member-ordering */
+  /** @see https://typescript-eslint.io/rules/default-param-last/ */
+  '@typescript-eslint/default-param-last': `error`,
+
+  /** @see https://typescript-eslint.io/rules/member-ordering/ */
   '@typescript-eslint/member-ordering': [
     `error`,
     {
@@ -1096,13 +1144,25 @@ export const typescriptRules = {
   '@typescript-eslint/prefer-as-const': `error`,
 
   /** @see https://typescript-eslint.io/rules/prefer-destructuring/ */
-  '@typescript-eslint/prefer-destructuring': `error`,
+  '@typescript-eslint/prefer-destructuring': [
+    `error`,
+    {
+      array: false,
+      object: true,
+    },
+    {
+      enforceForRenamedProperties: false,
+    },
+  ],
 
   /** @see https://typescript-eslint.io/rules/prefer-for-of/ */
   '@typescript-eslint/prefer-for-of': `error`,
 
   /** @see https://typescript-eslint.io/rules/prefer-literal-enum-member/ */
   '@typescript-eslint/prefer-literal-enum-member': `error`,
+
+  /** @see https://typescript-eslint.io/rules/require-await */
+  '@typescript-eslint/require-await': `error`,
 
   /** @see https://typescript-eslint.io/rules/triple-slash-reference/ */
   '@typescript-eslint/triple-slash-reference': `error`,
@@ -1114,7 +1174,7 @@ export default {
     baseRules,
     deprecatedNodeCommonJsRules,
     disabledBaseRules,
-    disabledTypescriptRules,
+    disabledTypescriptExtensionRules,
     importRules,
     simpleImportSortRules,
     stylisticRules,
