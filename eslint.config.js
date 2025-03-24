@@ -438,6 +438,14 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/prefer-object-spread */
   'prefer-object-spread': `error`,
 
+  /** @see https://eslint.org/docs/latest/rules/prefer-regex-literals */
+  'prefer-regex-literals': [
+    `error`,
+    {
+      disallowRedundantWrapping: true,
+    },
+  ],
+
   /** @see https://eslint.org/docs/latest/rules/prefer-rest-params */
   'prefer-rest-params': `error`,
 
@@ -446,6 +454,9 @@ export const baseRules = {
 
   /** @see https://eslint.org/docs/latest/rules/prefer-template */
   'prefer-template': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/radix */
+  radix: `error`,
 
   /** @see https://eslint.org/docs/latest/rules/require-yield */
   'require-yield': `error`,
@@ -575,6 +586,24 @@ export const disabledTypescriptExtensionRules = {
   /** @see https://eslint.org/docs/latest/rules/no-useless-constructor */
   'no-useless-constructor': `off`,
 
+  /** @see https://eslint.org/docs/latest/rules/prefer-arrow-callback */
+  'prefer-arrow-callback': [
+    `error`,
+    {
+      allowNamedFunctions: false,
+      allowUnboundThis: true,
+    },
+  ],
+
+  /** @see https://eslint.org/docs/latest/rules/prefer-const */
+  'prefer-const': [
+    `error`,
+    {
+      destructuring: `any`,
+      ignoreReadBeforeAssign: true,
+    },
+  ],
+
   /** @see https://eslint.org/docs/latest/rules/prefer-destructuring */
   'prefer-destructuring': `off`,
 
@@ -586,10 +615,19 @@ export const disabledTypescriptExtensionRules = {
 };
 
 export const disabledTypescriptPersonalRules = {
+  /** @see https://typescript-eslint.io/rules/no-unsafe-assignment/ */
   '@typescript-eslint/no-unsafe-assignment': `off`,
+
+  /** @see https://typescript-eslint.io/rules/no-unsafe-call/ */
   '@typescript-eslint/no-unsafe-call': `off`,
+
+  /** @see https://typescript-eslint.io/rules/no-unsafe-member-access/ */
   '@typescript-eslint/no-unsafe-member-access': `off`,
+
+  /** @see https://typescript-eslint.io/rules/prefer-nullish-coalescing/ */
   '@typescript-eslint/prefer-nullish-coalescing': `off`,
+
+  /** @see https://typescript-eslint.io/rules/prefer-regexp-exec/ */
   '@typescript-eslint/prefer-regexp-exec': `off`,
 };
 
