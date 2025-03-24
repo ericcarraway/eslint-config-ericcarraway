@@ -279,6 +279,15 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/no-label-var */
   'no-label-var': `error`,
 
+  /** @see https://eslint.org/docs/latest/rules/no-labels */
+  'no-labels': [
+    `error`,
+    {
+      allowLoop: false,
+      allowSwitch: false,
+    },
+  ],
+
   /** @see https://eslint.org/docs/latest/rules/no-lone-blocks */
   'no-lone-blocks': `error`,
 
@@ -330,6 +339,27 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/no-octal-escape */
   'no-octal-escape': `error`,
 
+  /** @see https://eslint.org/docs/latest/rules/no-param-reassign */
+  'no-param-reassign': [
+    `error`,
+    {
+      ignorePropertyModificationsFor: [
+        `acc`,
+        `accumulator`,
+        `e`,
+        `ctx`,
+        `context`,
+        `req`,
+        `request`,
+        `res`,
+        `response`,
+        `$scope`,
+        `staticContext`,
+      ],
+      props: true,
+    },
+  ],
+
   /** @see https://eslint.org/docs/latest/rules/no-plusplus */
   'no-plusplus': `error`,
 
@@ -345,8 +375,151 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/no-regex-spaces */
   'no-regex-spaces': `error`,
 
+  /** @see https://eslint.org/docs/latest/rules/no-restricted-exports */
+  'no-restricted-exports': [
+    `error`,
+    {
+      restrictedNamedExports: [`default`, `then`],
+    },
+  ],
+
+  /** @see https://eslint.org/docs/latest/rules/no-restricted-globals */
+  'no-restricted-globals': [
+    `error`,
+    {
+      message: `Use Number.isFinite instead https://github.com/airbnb/javascript#standard-library--isfinite`,
+      name: `isFinite`,
+    },
+    {
+      message: `Use Number.isNaN instead https://github.com/airbnb/javascript#standard-library--isnan`,
+      name: `isNaN`,
+    },
+    `addEventListener`,
+    `blur`,
+    `close`,
+    `closed`,
+    `confirm`,
+    `defaultStatus`,
+    `defaultstatus`,
+    `event`,
+    `external`,
+    `find`,
+    `focus`,
+    `frameElement`,
+    `frames`,
+    `history`,
+    `innerHeight`,
+    `innerWidth`,
+    `length`,
+    `location`,
+    `locationbar`,
+    `menubar`,
+    `moveBy`,
+    `moveTo`,
+    `name`,
+    `onblur`,
+    `onerror`,
+    `onfocus`,
+    `onload`,
+    `onresize`,
+    `onunload`,
+    `open`,
+    `opener`,
+    `opera`,
+    `outerHeight`,
+    `outerWidth`,
+    `pageXOffset`,
+    `pageYOffset`,
+    `parent`,
+    `print`,
+    `removeEventListener`,
+    `resizeBy`,
+    `resizeTo`,
+    `screen`,
+    `screenLeft`,
+    `screenTop`,
+    `screenX`,
+    `screenY`,
+    `scroll`,
+    `scrollbars`,
+    `scrollBy`,
+    `scrollTo`,
+    `scrollX`,
+    `scrollY`,
+    `self`,
+    `status`,
+    `statusbar`,
+    `stop`,
+    `toolbar`,
+    `top`,
+  ],
+
+  /** @see https://eslint.org/docs/latest/rules/no-restricted-properties */
+  'no-restricted-properties': [
+    `error`,
+    {
+      message: `arguments.callee is deprecated`,
+      object: `arguments`,
+      property: `callee`,
+    },
+    {
+      message: `Please use Number.isFinite instead`,
+      object: `global`,
+      property: `isFinite`,
+    },
+    {
+      message: `Please use Number.isFinite instead`,
+      object: `self`,
+      property: `isFinite`,
+    },
+    {
+      message: `Please use Number.isFinite instead`,
+      object: `window`,
+      property: `isFinite`,
+    },
+    {
+      message: `Please use Number.isNaN instead`,
+      object: `global`,
+      property: `isNaN`,
+    },
+    {
+      message: `Please use Number.isNaN instead`,
+      object: `self`,
+      property: `isNaN`,
+    },
+    {
+      message: `Please use Number.isNaN instead`,
+      object: `window`,
+      property: `isNaN`,
+    },
+    {
+      message: `Please use Object.defineProperty instead.`,
+      property: `__defineGetter__`,
+    },
+    {
+      message: `Please use Object.defineProperty instead.`,
+      property: `__defineSetter__`,
+    },
+    {
+      message: `Use the exponentiation operator (**) instead.`,
+      object: `Math`,
+      property: `pow`,
+    },
+  ],
+
+  /** @see https://eslint.org/docs/latest/rules/no-return-assign */
+  'no-return-assign': [`error`, `always`],
+
   /** @see https://eslint.org/docs/latest/rules/no-script-url */
   'no-script-url': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-self-assign */
+  'no-self-assign': [
+    `error`,
+    {
+      props: true,
+    },
+  ],
 
   /** @see https://eslint.org/docs/latest/rules/no-self-compare */
   'no-self-compare': `error`,
@@ -376,7 +549,20 @@ export const baseRules = {
   'no-undef-init': `error`,
 
   /** @see https://eslint.org/docs/latest/rules/no-underscore-dangle */
-  'no-underscore-dangle': [`error`, { allow: [`_id`] }],
+  'no-underscore-dangle': [
+    `error`,
+    {
+      allow: [`_id`],
+      allowAfterSuper: false,
+      allowAfterThis: false,
+      allowAfterThisConstructor: false,
+      allowFunctionParams: true,
+      allowInArrayDestructuring: true,
+      allowInObjectDestructuring: true,
+      enforceInClassFields: false,
+      enforceInMethodNames: false,
+    },
+  ],
 
   /** @see https://eslint.org/docs/latest/rules/no-unexpected-multiline */
   'no-unexpected-multiline': `error`,
@@ -384,8 +570,24 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/no-unmodified-loop-condition */
   'no-unmodified-loop-condition': `error`,
 
+  /** @see https://eslint.org/docs/latest/rules/no-unneeded-ternary */
+  'no-unneeded-ternary': [
+    `error`,
+    {
+      defaultAssignment: false,
+    },
+  ],
+
   /** @see https://eslint.org/docs/latest/rules/no-unreachable */
   'no-unreachable': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-unreachable-loop */
+  'no-unreachable-loop': [
+    `error`,
+    {
+      ignore: [],
+    },
+  ],
 
   /** @see https://eslint.org/docs/latest/rules/no-unsafe-finally */
   'no-unsafe-finally': `error`,
@@ -473,11 +675,25 @@ export const baseRules = {
     },
   ],
 
+  /** @see https://eslint.org/docs/latest/rules/strict */
+  strict: [`error`, `never`],
+
   /** @see https://eslint.org/docs/latest/rules/symbol-description */
   'symbol-description': `error`,
 
+  /** @see https://eslint.org/docs/latest/rules/unicode-bom */
+  'unicode-bom': [`error`, `never`],
+
   /** @see https://eslint.org/docs/latest/rules/use-isnan */
   'use-isnan': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/valid-typeof */
+  'valid-typeof': [
+    `error`,
+    {
+      requireStringLiterals: true,
+    },
+  ],
 
   /** @see https://eslint.org/docs/latest/rules/vars-on-top */
   'vars-on-top': `error`,
@@ -574,6 +790,14 @@ export const disabledTypescriptExtensionRules = {
   /** @see https://eslint.org/docs/latest/rules/no-throw-literal */
   'no-throw-literal': `off`,
 
+  /** @see https://eslint.org/docs/latest/rules/no-unsafe-optional-chaining */
+  'no-unsafe-optional-chaining': [
+    `error`,
+    {
+      disallowArithmeticOperators: true,
+    },
+  ],
+
   /** @see https://eslint.org/docs/latest/rules/no-unused-expressions */
   'no-unused-expressions': `off`,
 
@@ -585,6 +809,31 @@ export const disabledTypescriptExtensionRules = {
 
   /** @see https://eslint.org/docs/latest/rules/no-useless-constructor */
   'no-useless-constructor': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-useless-rename */
+  'no-useless-rename': [
+    `error`,
+    {
+      ignoreDestructuring: false,
+      ignoreExport: false,
+      ignoreImport: false,
+    },
+  ],
+
+  /** @see https://eslint.org/docs/latest/rules/object-shorthand */
+  'object-shorthand': [
+    `error`,
+    `always`,
+    {
+      avoidQuotes: true,
+      ignoreConstructors: false,
+    },
+  ],
+
+  /** @see https://eslint.org/docs/latest/rules/one-var */
+  'one-var': [`error`, `never`],
+
+  'operator-assignment': [`error`, `always`],
 
   /** @see https://eslint.org/docs/latest/rules/prefer-arrow-callback */
   'prefer-arrow-callback': [
@@ -1154,6 +1403,14 @@ export const stylisticRules = {
 
   /** @see https://eslint.style/rules/default/object-curly-spacing */
   '@stylistic/object-curly-spacing': [`error`, `always`],
+
+  /** @see https://eslint.style/rules/default/object-property-newline */
+  '@stylistic/object-property-newline': [
+    `error`,
+    {
+      allowAllPropertiesOnSameLine: true,
+    },
+  ],
 
   /** @see https://eslint.style/rules/default/one-var-declaration-per-line */
   '@stylistic/one-var-declaration-per-line': [`error`, `always`],
