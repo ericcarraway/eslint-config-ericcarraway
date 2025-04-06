@@ -1094,6 +1094,16 @@ export const simpleImportSortRules = {
   'simple-import-sort/imports': `error`,
 };
 
+/** @see https://github.com/mthadley/eslint-plugin-sort-destructure-keys */
+export const sortDestructureKeysRules = {
+  'sort-destructure-keys/sort-destructure-keys': [
+    `error`,
+    {
+      caseSensitive: false,
+    },
+  ],
+};
+
 export const stylisticRules = {
   /** @see https://eslint.style/rules/default/array-bracket-newline */
   '@stylistic/array-bracket-newline': [`off`, `consistent`],
