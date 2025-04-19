@@ -552,7 +552,10 @@ export const baseRules = {
   'no-underscore-dangle': [
     `error`,
     {
-      allow: [`_id`],
+      allow: [
+        `__v`, // Mongoose version key.
+        `_id`, // MongoDB ObjectId key.
+      ],
       allowAfterSuper: false,
       allowAfterThis: false,
       allowAfterThisConstructor: false,
