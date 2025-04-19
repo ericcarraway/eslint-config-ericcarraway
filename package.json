@@ -11,8 +11,8 @@
   },
   "types": "./index.d.ts",
   "scripts": {
-    "prerelease": "./prerelease.sh",
-    "shipit": "./publish.sh",
+    "prerelease": "./scripts/prerelease.sh",
+    "shipit": "./scripts/publish.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
