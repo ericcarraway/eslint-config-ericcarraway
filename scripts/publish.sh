@@ -5,7 +5,7 @@
 # Prevent the script from exiting happily if subsequent commands fail.
 set -e
 
-package_name="@percuss.io/eslint-config-ericcarraway"
+package_name=$(node -p "require('./package.json').name")
 
 username_expected="ericcarraway"
 username_actual=$(npm whoami)
