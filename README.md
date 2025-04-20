@@ -14,7 +14,11 @@ _This command will install this package & save it to your project's `devDependen
 
 ### 2. Install peer dependencies
 
-(via `npm i --save-dev`)
+```shell
+npm install --save-dev @eslint/js @stylistic/eslint-plugin eslint-plugin-import eslint-plugin-simple-import-sort eslint-plugin-sort-destructure-keys typescript-eslint
+```
+
+The following peer dependencies are required:
 
 - [@eslint/js](https://www.npmjs.com/package/@eslint/js)
 - [@stylistic/eslint-plugin](https://www.npmjs.com/package/@stylistic/eslint-plugin)
@@ -23,7 +27,9 @@ _This command will install this package & save it to your project's `devDependen
 - [eslint-plugin-sort-destructure-keys](https://www.npmjs.com/package/eslint-plugin-sort-destructure-keys)
 - [typescript-eslint](https://www.npmjs.com/package/typescript-eslint)
 
-### 3. Use
+## Usage
+
+Create an `eslint.config.mjs` file in your project root with the following content:
 
 ```js
 /**
@@ -37,6 +43,7 @@ import { fileURLToPath } from 'node:url';
 import eslint from '@eslint/js';
 import {
   baseRules,
+  deprecatedNodeCommonJsRules,
   disabledBasePersonalRules,
   disabledTypescriptExtensionRules,
   disabledTypescriptPersonalRules,
@@ -57,7 +64,7 @@ const directory = dirname(fileURLToPath(import.meta.url));
 const lintConfig = tseslint.config(
   {
     ignores: [
-      //
+      // Add files/directories to ignore
     ],
   },
   eslint.configs.recommended,
@@ -93,6 +100,7 @@ const lintConfig = tseslint.config(
   {
     rules: {
       ...baseRules,
+      ...deprecatedNodeCommonJsRules,
       ...disabledBasePersonalRules,
       ...disabledTypescriptExtensionRules,
       ...disabledTypescriptPersonalRules,
@@ -108,3 +116,7 @@ const lintConfig = tseslint.config(
 // eslint-disable-next-line import/no-default-export
 export default lintConfig;
 ```
+
+## License
+
+ISC

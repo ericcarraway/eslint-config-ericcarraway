@@ -2017,6 +2017,7 @@ export default {
     disabledTypescriptPersonalRules,
     importRules,
     simpleImportSortRules,
+    sortDestructureKeysRules,
     stylisticRules,
     typescriptRules,
   },
