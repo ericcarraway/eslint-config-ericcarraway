@@ -386,9 +386,13 @@ export const baseRules = {
   /**
    * @see https://eslint.org/docs/latest/rules/no-restricted-globals
    *
+   * This configuration is from the Airbnb ESLint config.
+   * @see https://www.npmjs.com/package/eslint-config-airbnb-base
+   *
+   * It uses the `confusing-browser-globals` from Facebook's `create-react-app`,
+   * a curated list of browser globals that commonly cause confusion and
+   * are not recommended to use without an explicit `window.` qualifier.
    * @see https://www.npmjs.com/package/confusing-browser-globals
-   * A curated list of browser globals that commonly cause confusion and
-   * are not recommended to use without an explicit window. qualifier.
    */
   'no-restricted-globals': [
     `error`,
