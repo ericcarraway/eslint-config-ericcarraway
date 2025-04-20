@@ -182,6 +182,9 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/no-delete-var */
   'no-delete-var': `error`,
 
+  /** @see https://eslint.org/docs/latest/rules/no-div-regex */
+  'no-div-regex': `error`,
+
   /** @see https://eslint.org/docs/latest/rules/no-dupe-args */
   'no-dupe-args': `error`,
 
@@ -342,22 +345,28 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/no-octal-escape */
   'no-octal-escape': `error`,
 
-  /** @see https://eslint.org/docs/latest/rules/no-param-reassign */
+  /**
+   * @see https://eslint.org/docs/latest/rules/no-param-reassign
+   */
   'no-param-reassign': [
     `error`,
     {
+      /**
+       * This configuration is from the Airbnb ESLint config.
+       * @see https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/best-practices.js
+       */
       ignorePropertyModificationsFor: [
-        `acc`,
-        `accumulator`,
-        `e`,
-        `ctx`,
-        `context`,
-        `req`,
-        `request`,
-        `res`,
-        `response`,
-        `$scope`,
-        `staticContext`,
+        `acc`, // for reduce accumulators
+        `accumulator`, // for reduce accumulators
+        `e`, // for e.returnvalue
+        `ctx`, // for Koa routing
+        `context`, // for Koa routing
+        `req`, // for Express requests
+        `request`, // for Express requests
+        `res`, // for Express responses
+        `response`, // for Express responses
+        `$scope`, // for Angular 1 scopes
+        `staticContext`, // for ReactRouter context
       ],
       props: true,
     },
@@ -467,7 +476,12 @@ export const baseRules = {
     `top`,
   ],
 
-  /** @see https://eslint.org/docs/latest/rules/no-restricted-properties */
+  /**
+   * @see https://eslint.org/docs/latest/rules/no-restricted-properties
+   *
+   * This configuration is from the Airbnb ESLint config.
+   * @see https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/best-practices.js
+   */
   'no-restricted-properties': [
     `error`,
     {
@@ -625,6 +639,9 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/no-unused-labels */
   'no-unused-labels': `error`,
 
+  /** @see https://eslint.org/docs/latest/rules/no-unused-private-class-members */
+  'no-unused-private-class-members': `error`,
+
   /** @see https://eslint.org/docs/latest/rules/no-useless-backreference */
   'no-useless-backreference': `error`,
 
@@ -729,6 +746,9 @@ export const baseRules = {
 
   /** @see https://eslint.org/docs/latest/rules/radix */
   radix: `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/require-atomic-updates */
+  'require-atomic-updates': `error`,
 
   /** @see https://eslint.org/docs/latest/rules/require-yield */
   'require-yield': `error`,
@@ -1363,20 +1383,38 @@ export const stylisticRules = {
     },
   ],
 
+  /** @see https://eslint.style/rules/default/multiline-ternary */
+  '@stylistic/multiline-ternary': [`error`, `always`],
+
   /** @see https://eslint.style/rules/default/new-parens */
-  '@stylistic/new-parens': [`error`],
+  '@stylistic/new-parens': `error`,
+
+  /** @see https://eslint.style/rules/default/no-confusing-arrow */
+  '@stylistic/no-confusing-arrow': [
+    `error`,
+    {
+      allowParens: true,
+    },
+  ],
 
   /** @see https://eslint.style/rules/default/no-extra-semi */
-  '@stylistic/no-extra-semi': [`error`],
+  '@stylistic/no-extra-semi': `error`,
 
   /** @see https://eslint.style/rules/default/no-floating-decimal */
-  '@stylistic/no-floating-decimal': [`error`],
+  '@stylistic/no-floating-decimal': `error`,
 
   /** @see https://eslint.style/rules/default/no-mixed-operators */
   '@stylistic/no-mixed-operators': [
     `error`,
     {
       allowSamePrecedence: false,
+      /**
+       * The list of arithmetic groups disallows mixing `%` and `**`
+       * with other arithmetic operators.
+       *
+       * This configuration is from the Airbnb ESLint config.
+       * @see https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/style.js
+       */
       groups: [
         [`%`, `**`],
         [`%`, `+`],
@@ -1392,7 +1430,7 @@ export const stylisticRules = {
   ],
 
   /** @see https://eslint.style/rules/default/no-mixed-spaces-and-tabs */
-  '@stylistic/no-mixed-spaces-and-tabs': [`error`],
+  '@stylistic/no-mixed-spaces-and-tabs': `error`,
 
   /** @see https://eslint.style/rules/default/no-multi-spaces */
   '@stylistic/no-multi-spaces': [
@@ -1413,7 +1451,7 @@ export const stylisticRules = {
   ],
 
   /** @see https://eslint.style/rules/default/no-tabs */
-  '@stylistic/no-tabs': [`error`],
+  '@stylistic/no-tabs': `error`,
 
   /** @see https://eslint.style/rules/default/no-trailing-spaces */
   '@stylistic/no-trailing-spaces': [
@@ -1425,7 +1463,7 @@ export const stylisticRules = {
   ],
 
   /** @see https://eslint.style/rules/default/no-whitespace-before-property */
-  '@stylistic/no-whitespace-before-property': [`error`],
+  '@stylistic/no-whitespace-before-property': `error`,
 
   /** @see https://eslint.style/rules/default/nonblock-statement-body-position */
   '@stylistic/nonblock-statement-body-position': [
