@@ -45,6 +45,9 @@ export const baseRules = {
     },
   ],
 
+  /** @see https://eslint.org/docs/latest/rules/complexity */
+  complexity: [`warn`, { max: 20 }],
+
   /** @see https://eslint.org/docs/latest/rules/constructor-super */
   'constructor-super': `error`,
 
@@ -611,6 +614,14 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/no-unsafe-negation */
   'no-unsafe-negation': `error`,
 
+  /** @see https://eslint.org/docs/latest/rules/no-unsafe-optional-chaining */
+  'no-unsafe-optional-chaining': [
+    `error`,
+    {
+      disallowArithmeticOperators: true,
+    },
+  ],
+
   /** @see https://eslint.org/docs/latest/rules/no-unused-labels */
   'no-unused-labels': `error`,
 
@@ -632,6 +643,16 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/no-useless-escape */
   'no-useless-escape': `error`,
 
+  /** @see https://eslint.org/docs/latest/rules/no-useless-rename */
+  'no-useless-rename': [
+    `error`,
+    {
+      ignoreDestructuring: false,
+      ignoreExport: false,
+      ignoreImport: false,
+    },
+  ],
+
   /** @see https://eslint.org/docs/latest/rules/no-useless-return */
   'no-useless-return': `error`,
 
@@ -643,6 +664,39 @@ export const baseRules = {
 
   /** @see https://eslint.org/docs/latest/rules/no-with */
   'no-with': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/object-shorthand */
+  'object-shorthand': [
+    `error`,
+    `always`,
+    {
+      avoidQuotes: true,
+      ignoreConstructors: false,
+    },
+  ],
+
+  /** @see https://eslint.org/docs/latest/rules/one-var */
+  'one-var': [`error`, `never`],
+
+  'operator-assignment': [`error`, `always`],
+
+  /** @see https://eslint.org/docs/latest/rules/prefer-arrow-callback */
+  'prefer-arrow-callback': [
+    `error`,
+    {
+      allowNamedFunctions: false,
+      allowUnboundThis: true,
+    },
+  ],
+
+  /** @see https://eslint.org/docs/latest/rules/prefer-const */
+  'prefer-const': [
+    `error`,
+    {
+      destructuring: `any`,
+      ignoreReadBeforeAssign: true,
+    },
+  ],
 
   /** @see https://eslint.org/docs/latest/rules/prefer-exponentiation-operator */
   'prefer-exponentiation-operator': `error`,
@@ -804,16 +858,13 @@ export const disabledTypescriptExtensionRules = {
   /** @see https://eslint.org/docs/latest/rules/no-shadow */
   'no-shadow': `off`,
 
-  /** @see https://eslint.org/docs/latest/rules/no-throw-literal */
+  /**
+   * @see https://eslint.org/docs/latest/rules/no-throw-literal
+   *
+   * The TypeScript version of this rule is 'only-throw-error'.
+   * @see https://typescript-eslint.io/rules/only-throw-error/
+   */
   'no-throw-literal': `off`,
-
-  /** @see https://eslint.org/docs/latest/rules/no-unsafe-optional-chaining */
-  'no-unsafe-optional-chaining': [
-    `error`,
-    {
-      disallowArithmeticOperators: true,
-    },
-  ],
 
   /** @see https://eslint.org/docs/latest/rules/no-unused-expressions */
   'no-unused-expressions': `off`,
@@ -826,49 +877,6 @@ export const disabledTypescriptExtensionRules = {
 
   /** @see https://eslint.org/docs/latest/rules/no-useless-constructor */
   'no-useless-constructor': `off`,
-
-  /** @see https://eslint.org/docs/latest/rules/no-useless-rename */
-  'no-useless-rename': [
-    `error`,
-    {
-      ignoreDestructuring: false,
-      ignoreExport: false,
-      ignoreImport: false,
-    },
-  ],
-
-  /** @see https://eslint.org/docs/latest/rules/object-shorthand */
-  'object-shorthand': [
-    `error`,
-    `always`,
-    {
-      avoidQuotes: true,
-      ignoreConstructors: false,
-    },
-  ],
-
-  /** @see https://eslint.org/docs/latest/rules/one-var */
-  'one-var': [`error`, `never`],
-
-  'operator-assignment': [`error`, `always`],
-
-  /** @see https://eslint.org/docs/latest/rules/prefer-arrow-callback */
-  'prefer-arrow-callback': [
-    `error`,
-    {
-      allowNamedFunctions: false,
-      allowUnboundThis: true,
-    },
-  ],
-
-  /** @see https://eslint.org/docs/latest/rules/prefer-const */
-  'prefer-const': [
-    `error`,
-    {
-      destructuring: `any`,
-      ignoreReadBeforeAssign: true,
-    },
-  ],
 
   /** @see https://eslint.org/docs/latest/rules/prefer-destructuring */
   'prefer-destructuring': `off`,
@@ -1827,7 +1835,15 @@ export const typescriptRules = {
    * This rule extends the base `no-unused-expressions` rule from ESLint core.
    * @see https://eslint.org/docs/latest/rules/no-unused-expressions
    */
-  '@typescript-eslint/no-unused-expressions': `error`,
+  '@typescript-eslint/no-unused-expressions': [
+    `error`,
+    {
+      allowShortCircuit: false,
+      allowTaggedTemplates: false,
+      allowTernary: false,
+      enforceForJSX: false,
+    },
+  ],
 
   /**
    * @see https://typescript-eslint.io/rules/no-unused-vars/
