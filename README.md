@@ -12,30 +12,99 @@ $ npm i --save-dev @percuss.io/eslint-config-ericcarraway
 
 _This command will install this package & save it to your project's `devDependencies`._
 
-### 2. Use
+### 2. Install peer dependencies
 
-```jsonc
-// your project's `.eslintrc` file
+(via `npm i --save-dev`)
 
-{
-  "extends": [
-    // (before) additional shareable configs
-    //          from which to inherit
-    //          whose individual `rules`
-    //          will be overwritten by `ericcarraway`
-    //          if they conflict
+- [@eslint/js](https://www.npmjs.com/package/@eslint/js)
+- [@stylistic/eslint-plugin](https://www.npmjs.com/package/@stylistic/eslint-plugin)
+- [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
+- [eslint-plugin-simple-import-sort](https://www.npmjs.com/package/eslint-plugin-simple-import-sort)
+- [eslint-plugin-sort-destructure-keys](https://www.npmjs.com/package/eslint-plugin-sort-destructure-keys)
+- [typescript-eslint](https://www.npmjs.com/package/typescript-eslint)
 
-    "@percuss.io/eslint-config-ericcarraway"
+### 3. Use
 
-    // (after) additional shareable configs
-    //         from which to inherit
-    //         whose individual `rules`
-    //         will overwrite `ericcarraway`
-    //         if they conflict
-  ],
+```js
+/**
+ * @module eslint.config.mjs
+ */
+// @ts-check
 
-  "rules": {
-    // your project's "final say" on individual rules
-  }
-}
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import eslint from '@eslint/js';
+import {
+  baseRules,
+  disabledBasePersonalRules,
+  disabledTypescriptExtensionRules,
+  disabledTypescriptPersonalRules,
+  importRules,
+  simpleImportSortRules,
+  sortDestructureKeysRules,
+  stylisticRules,
+  typescriptRules,
+} from '@percuss.io/eslint-config-ericcarraway';
+import stylistic from '@stylistic/eslint-plugin';
+import { flatConfigs as eslintPluginImport } from 'eslint-plugin-import';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import sortDestructureKeys from 'eslint-plugin-sort-destructure-keys';
+import tseslint, { configs as tseslintConfigs } from 'typescript-eslint';
+
+const directory = dirname(fileURLToPath(import.meta.url));
+
+const lintConfig = tseslint.config(
+  {
+    ignores: [
+      //
+    ],
+  },
+  eslint.configs.recommended,
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+  eslintPluginImport.recommended,
+
+  tseslintConfigs.strictTypeChecked,
+  tseslintConfigs.stylisticTypeChecked,
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: {
+          allowDefaultProject: [
+            //
+            `.prettierrc.cjs`,
+            `*.cjs`,
+            `*.js`,
+            `*.mjs`,
+          ],
+        },
+        tsconfigRootDir: directory,
+      },
+    },
+  },
+  {
+    plugins: {
+      '@stylistic': stylistic,
+      'simple-import-sort': simpleImportSort,
+      'sort-destructure-keys': sortDestructureKeys,
+    },
+  },
+  {
+    rules: {
+      ...baseRules,
+      ...disabledBasePersonalRules,
+      ...disabledTypescriptExtensionRules,
+      ...disabledTypescriptPersonalRules,
+      ...importRules,
+      ...simpleImportSortRules,
+      ...sortDestructureKeysRules,
+      ...stylisticRules,
+      ...typescriptRules,
+    },
+  },
+);
+
+// eslint-disable-next-line import/no-default-export
+export default lintConfig;
 ```
