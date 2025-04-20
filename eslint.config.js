@@ -383,7 +383,13 @@ export const baseRules = {
     },
   ],
 
-  /** @see https://eslint.org/docs/latest/rules/no-restricted-globals */
+  /**
+   * @see https://eslint.org/docs/latest/rules/no-restricted-globals
+   *
+   * @see https://www.npmjs.com/package/confusing-browser-globals
+   * A curated list of browser globals that commonly cause confusion and
+   * are not recommended to use without an explicit window. qualifier.
+   */
   'no-restricted-globals': [
     `error`,
     {
@@ -547,6 +553,9 @@ export const baseRules = {
 
   /** @see https://eslint.org/docs/latest/rules/no-undef-init */
   'no-undef-init': `error`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-undefined */
+  'no-undefined': `error`,
 
   /** @see https://eslint.org/docs/latest/rules/no-underscore-dangle */
   'no-underscore-dangle': [
@@ -740,6 +749,7 @@ export const disabledBasePersonalRules = {
  * These core ESLint rules must be disabled because they do not support TypeScript syntax.
  * We'll disable these rules here then enable their corresponding TypeScript extension rules below.
  * @see https://typescript-eslint.io/rules#extension-rules
+ * @see https://typescript-eslint.io/rules/?=extension#rules Search for all rules labelled "extension".
  */
 export const disabledTypescriptExtensionRules = {
   /** @see https://eslint.org/docs/latest/rules/class-methods-use-this */
