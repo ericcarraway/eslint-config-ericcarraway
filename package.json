@@ -1,23 +1,23 @@
 {
   "name": "@percuss.io/eslint-config-ericcarraway",
-  "version": "4.1.0",
+  "version": "5.0.1-beta.14",
   "description": "Shareable ESLint config for percuss.io JavaScript projects.",
-  "main": "index.js",
-  "scripts": {
-    "shipit": "./publish.sh",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./eslint.config.js",
+      "types": "./index.d.ts"
+    }
   },
-  "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.16.1",
-    "@typescript-eslint/parser": "^7.16.1",
-    "eslint": "^8.57.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-simple-import-sort": "^12.1.0",
-    "eslint-plugin-sort-destructure-keys": "^2.0.0"
+  "types": "./index.d.ts",
+  "scripts": {
+    "prerelease": "./scripts/prerelease.sh",
+    "shipit": "./scripts/publish.sh",
+    "test": "echo \"WARN: no test specified\" && exit 0"
   },
   "files": [
-    "handled-by-prettier.js",
-    "index.js"
+    "eslint.config.js",
+    "index.d.ts"
   ],
   "repository": {
     "type": "git",
