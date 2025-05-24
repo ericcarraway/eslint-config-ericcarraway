@@ -168,7 +168,7 @@ export const baseRules = {
   'no-constant-binary-expression': `error`,
 
   /** @see https://eslint.org/docs/latest/rules/no-constant-condition */
-  'no-constant-condition': [`error`, { checkLoops: `allExceptWhileTrue` }],
+  'no-constant-condition': `error`,
 
   /** @see https://eslint.org/docs/latest/rules/no-constructor-return */
   'no-constructor-return': `error`,
