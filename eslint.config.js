@@ -578,25 +578,6 @@ export const baseRules = {
   /** @see https://eslint.org/docs/latest/rules/no-undefined */
   'no-undefined': `error`,
 
-  /** @see https://eslint.org/docs/latest/rules/no-underscore-dangle */
-  'no-underscore-dangle': [
-    `error`,
-    {
-      allow: [
-        `__v`, // Mongoose version key.
-        `_id`, // MongoDB ObjectId key.
-      ],
-      allowAfterSuper: false,
-      allowAfterThis: false,
-      allowAfterThisConstructor: false,
-      allowFunctionParams: true,
-      allowInArrayDestructuring: true,
-      allowInObjectDestructuring: true,
-      enforceInClassFields: false,
-      enforceInMethodNames: false,
-    },
-  ],
-
   /** @see https://eslint.org/docs/latest/rules/no-unexpected-multiline */
   'no-unexpected-multiline': `error`,
 
@@ -821,6 +802,9 @@ export const disabledBasePersonalRules = {
 
   /** @see https://eslint.org/docs/latest/rules/no-restricted-syntax */
   'no-restricted-syntax': `off`,
+
+  /** @see https://eslint.org/docs/latest/rules/no-underscore-dangle */
+  'no-underscore-dangle': `off`,
 };
 
 /**
@@ -1322,7 +1306,7 @@ export const stylisticRules = {
        * `true` allows comments to appear at the end of block statements,
        * function bodies, classes, switch statements, and class static blocks.
        */
-      allowBlockEnd: false,
+      allowBlockEnd: true,
 
       /**
        * `true` allows comments to appear at the start of block statements,
@@ -1384,7 +1368,7 @@ export const stylisticRules = {
   ],
 
   /** @see https://eslint.style/rules/default/multiline-ternary */
-  '@stylistic/multiline-ternary': [`error`, `always`],
+  '@stylistic/multiline-ternary': `off`,
 
   /** @see https://eslint.style/rules/default/new-parens */
   '@stylistic/new-parens': `error`,
