@@ -1995,7 +1995,7 @@ export const typescriptRules = {
 export default {
   rules: {
     baseRules,
-    deprecatedNodeCommonJsRules,
+    deprecatedNodeCommonJsRules, // eslint-disable-line @typescript-eslint/no-deprecated
     disabledBasePersonalRules,
     disabledTypescriptExtensionRules,
     disabledTypescriptPersonalRules,
