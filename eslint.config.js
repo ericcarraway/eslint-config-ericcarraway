@@ -1224,9 +1224,6 @@ export const stylisticRules = {
   /** @see https://eslint.style/rules/default/eol-last */
   '@stylistic/eol-last': [`error`, `always`],
 
-  /** @see https://eslint.style/rules/default/func-call-spacing */
-  '@stylistic/func-call-spacing': [`error`, `never`],
-
   /** @see https://eslint.style/rules/default/function-call-argument-newline */
   '@stylistic/function-call-argument-newline': [`error`, `consistent`],
 
@@ -1282,59 +1279,6 @@ export const stylisticRules = {
 
   /** @see https://eslint.style/rules/default/linebreak-style */
   '@stylistic/linebreak-style': [`error`, `unix`],
-
-  /** @see https://eslint.style/rules/default/lines-around-comment */
-  '@stylistic/lines-around-comment': [
-    `warn`,
-    {
-      /** `true` requires an empty line after block comments. */
-      afterBlockComment: false,
-
-      /** `true` requires an empty line after hashbang comments. */
-      afterHashbangComment: true,
-
-      /** `true` requires an empty line after line comments. */
-      afterLineComment: false,
-
-      /** `true` allows comments to appear at the end of array literals. */
-      allowArrayEnd: true,
-
-      /** `true` allows comments to appear at the start of array literals. */
-      allowArrayStart: true,
-
-      /**
-       * `true` allows comments to appear at the end of block statements,
-       * function bodies, classes, switch statements, and class static blocks.
-       */
-      allowBlockEnd: true,
-
-      /**
-       * `true` allows comments to appear at the start of block statements,
-       * function bodies, classes, switch statements, and class static blocks.
-       */
-      allowBlockStart: true,
-
-      /** `true` allows comments to appear at the end of classes. */
-      allowClassEnd: false,
-
-      /** `true` allows comments to appear at the start of classes. */
-      allowClassStart: true,
-
-      /** `true` allows comments to appear at the end of object literals. */
-      allowObjectEnd: true,
-
-      /** `true` allows comments to appear at the start of object literals. */
-      allowObjectStart: true,
-
-      applyDefaultIgnorePatterns: true,
-
-      /** `true` (default) requires an empty line before block comments. */
-      beforeBlockComment: true,
-
-      /** `true` requires an empty line before line comments. */
-      beforeLineComment: true,
-    },
-  ],
 
   /** @see https://eslint.style/rules/default/lines-between-class-members */
   '@stylistic/lines-between-class-members': [
