@@ -1117,10 +1117,75 @@ export const importRules = {
   'import/unambiguous': `off`,
 };
 
+export const reactRules = {
+  'react/boolean-prop-naming': [
+    `error`,
+    {
+      rule: `^(can|has|is|should)[A-Z]([A-Za-z0-9]?)+|^disabled$`,
+      validateNested: true,
+    },
+  ],
+  'react/button-has-type': [`error`, { button: true, submit: true }],
+  'react/hook-use-state': [`error`, { allowDestructuredState: false }],
+  'react/jsx-pascal-case': `error`,
+  'react/jsx-sort-props': [
+    `error`,
+    /**
+     * @see https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-sort-props.md
+     */
+    {
+      callbacksLast: true,
+      ignoreCase: true,
+      locale: `auto`,
+      multiline: `ignore`,
+      noSortAlphabetically: false,
+      reservedFirst: true,
+      shorthandFirst: false,
+      shorthandLast: false,
+    },
+  ],
+  'react/no-danger': `error`,
+  'react/no-invalid-html-attribute': `error`,
+  'react/no-this-in-sfc': `error`,
+  'react/self-closing-comp': [`error`, { component: true, html: false }],
+  'react/style-prop-object': `error`,
+  'react/void-dom-elements-no-children': `error`, // (e.g. <img />, <br />)
+};
+
 /** @see https://github.com/lydell/eslint-plugin-simple-import-sort */
 export const simpleImportSortRules = {
   'simple-import-sort/exports': `error`,
-  'simple-import-sort/imports': `error`,
+  'simple-import-sort/imports': [
+    `error`,
+    {
+      /**
+       * @see https://github.com/lydell/eslint-plugin-simple-import-sort?tab=readme-ov-file#custom-grouping
+       */
+      groups: [
+        // Side effect imports.
+        [`^\\u0000`],
+
+        // Node.js builtins prefixed with `node:`.
+        [`^node:`],
+
+        // Packages.
+        // Things that start with a letter (or digit or underscore),
+        // or `@` followed by a letter.
+        [`^@?\\w`],
+
+        // Absolute imports and other imports such as Vue-style `@/foo`.
+        // Anything not matched in another group.
+        [`^`],
+
+        // Things that start with a "#".
+        [`^#`],
+
+        // Relative imports.
+        // Anything that starts with a dot.
+        [`^\\.`],
+      ],
+    },
+  ],
 };
 
 /** @see https://github.com/mthadley/eslint-plugin-sort-destructure-keys */
@@ -1174,16 +1239,7 @@ export const stylisticRules = {
   ],
 
   /** @see https://eslint.style/rules/default/comma-dangle */
-  '@stylistic/comma-dangle': [
-    `error`,
-    {
-      arrays: `always-multiline`,
-      exports: `always-multiline`,
-      functions: `always-multiline`,
-      imports: `always-multiline`,
-      objects: `always-multiline`,
-    },
-  ],
+  '@stylistic/comma-dangle': [`error`, `always-multiline`],
 
   /** @see https://eslint.style/rules/default/comma-spacing */
   '@stylistic/comma-spacing': [

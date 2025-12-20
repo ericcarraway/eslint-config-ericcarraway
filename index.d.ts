@@ -24,6 +24,7 @@ declare const _default: {
     disabledTypescriptExtensionRules: Record<string, RuleEntry>;
     disabledTypescriptPersonalRules: Record<string, RuleEntry>;
     importRules: Record<string, RuleEntry>;
+    reactRules: Record<string, RuleEntry>;
     simpleImportSortRules: Record<string, RuleEntry>;
     sortDestructureKeysRules: Record<string, RuleEntry>;
     stylisticRules: Record<string, RuleEntry>;

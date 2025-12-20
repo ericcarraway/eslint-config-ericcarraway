@@ -15,7 +15,7 @@ _This command will install this package & save it to your project's `devDependen
 ### 2. Install peer dependencies
 
 ```shell
-npm install --save-dev @eslint/js @stylistic/eslint-plugin eslint-plugin-import eslint-plugin-simple-import-sort eslint-plugin-sort-destructure-keys typescript-eslint
+npm install --save-dev @eslint/js @stylistic/eslint-plugin eslint-plugin-import eslint-plugin-react eslint-plugin-simple-import-sort eslint-plugin-sort-destructure-keys typescript-eslint
 ```
 
 The following peer dependencies are required:
@@ -23,6 +23,7 @@ The following peer dependencies are required:
 - [@eslint/js](https://www.npmjs.com/package/@eslint/js)
 - [@stylistic/eslint-plugin](https://www.npmjs.com/package/@stylistic/eslint-plugin)
 - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
+- [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
 - [eslint-plugin-simple-import-sort](https://www.npmjs.com/package/eslint-plugin-simple-import-sort)
 - [eslint-plugin-sort-destructure-keys](https://www.npmjs.com/package/eslint-plugin-sort-destructure-keys)
 - [typescript-eslint](https://www.npmjs.com/package/typescript-eslint)
@@ -48,6 +49,7 @@ import {
   disabledTypescriptExtensionRules,
   disabledTypescriptPersonalRules,
   importRules,
+  reactRules,
   simpleImportSortRules,
   sortDestructureKeysRules,
   stylisticRules,
