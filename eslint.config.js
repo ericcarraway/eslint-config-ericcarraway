@@ -1127,6 +1127,14 @@ export const reactRules = {
   ],
   'react/button-has-type': [`error`, { button: true, submit: true }],
   'react/hook-use-state': [`error`, { allowDestructuredState: false }],
+  'react/jsx-boolean-value': [`error`, `always`],
+  'react/jsx-curly-brace-presence': [
+    `error`,
+    {
+      children: `never`,
+      props: `never`,
+    },
+  ],
   'react/jsx-pascal-case': `error`,
   'react/jsx-sort-props': [
     `error`,
