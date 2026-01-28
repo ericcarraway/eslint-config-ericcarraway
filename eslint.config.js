@@ -1117,6 +1117,7 @@ export const importRules = {
   'import/unambiguous': `off`,
 };
 
+/** @see https://github.com/jsx-eslint/eslint-plugin-react */
 export const reactRules = {
   'react/boolean-prop-naming': [
     `error`,
