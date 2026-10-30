@@ -12,11 +12,13 @@ This package exports **rule sets**: plain `rules` objects that you spread into y
 npm install --save-dev @percuss.io/eslint-config-ericcarraway
 ```
 
-Install the peer dependencies:
+Install the plugins for the rule sets you use. For the full example below:
 
 ```shell
-npm install --save-dev eslint@^9 @eslint/js@^9 @stylistic/eslint-plugin eslint-plugin-import eslint-plugin-n eslint-plugin-simple-import-sort eslint-plugin-sort-destructure-keys typescript-eslint
+npm install --save-dev eslint@^9 @eslint/js@^9 @stylistic/eslint-plugin eslint-plugin-import eslint-plugin-n eslint-plugin-simple-import-sort eslint-plugin-sort-destructure-keys typescript typescript-eslint globals
 ```
+
+ESLint is required. All plugin peers are optional; install each plugin whose rule set you enable.
 
 For React projects, also install `eslint-plugin-react`.
 
@@ -63,6 +65,24 @@ Every rule set is fully typed: rule names are exact keys and each entry has its 
 
 ## Usage
 
+This example uses typed linting for both JavaScript and TypeScript. Ensure the linted files belong to your `tsconfig.json`; for JavaScript, enable `allowJs` (and `checkJs` if you also want compiler diagnostics). For example:
+
+```json
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "strict": true,
+    "noEmit": true,
+    "module": "nodenext",
+    "target": "es2022"
+  },
+  "include": ["src/**/*", "eslint.config.mjs"]
+}
+```
+
+For a few files outside the project, use a narrow `projectService.allowDefaultProject` list, such as `['eslint.config.mjs']`, instead of `projectService: true`. Alternatively, scope typed linting to project files and use `tseslint.configs.disableTypeChecked` for other files. See the [typed linting troubleshooting guide](https://typescript-eslint.io/troubleshooting/typed-linting/).
+
 `eslint.config.mjs`:
 
 ```js
@@ -88,11 +108,12 @@ import importPlugin from 'eslint-plugin-import';
 import nPlugin from 'eslint-plugin-n';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import sortDestructureKeys from 'eslint-plugin-sort-destructure-keys';
+import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 export default defineConfig(
   globalIgnores([
-    // Add files/directories to ignore.
+    'dist/', // Add other generated files/directories here.
   ]),
 
   eslint.configs.recommended,
@@ -101,6 +122,8 @@ export default defineConfig(
 
   {
     languageOptions: {
+      // Use globals.browser for browser projects, or scope globals by file.
+      globals: globals.node,
       parserOptions: {
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
@@ -140,6 +163,7 @@ export default defineConfig(
 Register `eslint-plugin-react` and spread `reactRules`:
 
 ```js
+import { reactRules } from '@percuss.io/eslint-config-ericcarraway';
 import reactPlugin from 'eslint-plugin-react';
 
 // ...
@@ -149,10 +173,13 @@ import reactPlugin from 'eslint-plugin-react';
     rules: {
       ...reactPlugin.configs.flat.recommended.rules,
       ...reactRules,
+      ...reactPlugin.configs.flat['jsx-runtime'].rules,
     },
     settings: { react: { version: 'detect' } },
   },
 ```
+
+The `jsx-runtime` rules support the modern JSX transform, which does not require importing React. Omit that spread for the classic transform. For TypeScript projects, also configure `compilerOptions.jsx` (for example, `"react-jsx"`).
 
 ### Extending a rule's options
 
@@ -183,7 +210,10 @@ declare module 'eslint-plugin-sort-destructure-keys' {
 
 ## Migrating from v8
 
+- **Runtime compatibility:** Node.js `^20.19.0 || ^22.13.0 || >=24` and ESLint `^9.39.5` are required. Install the plugin versions in the peer table for the rule sets you use; plugin peers are optional so unused rule sets do not require their plugins.
+
 - **`deprecatedNodeCommonJsRules` was removed.** Use `nodeRules` and register `eslint-plugin-n` as `n`. The deprecated core rules `global-require`, `no-new-require`, `no-path-concat` & `no-buffer-constructor` are replaced by `n/global-require`, `n/no-new-require`, `n/no-path-concat` & `n/no-deprecated-api`.
+- **Broader Node deprecation checks:** `n/no-deprecated-api` reports other deprecated Node APIs as well as Buffer constructor usage; expect additional diagnostics.
 - **`@typescript-eslint/no-restricted-imports` → `no-restricted-imports`.** typescript-eslint deprecated its extension rule; the core rule now supports TypeScript (incl. `allowTypeImports`). Configure `no-restricted-imports` per project.
 - **`node:` imports are enforced by `import/enforce-node-protocol-usage`** (auto-fixable) instead of a list in `no-restricted-imports`.
 - **`@typescript-eslint/no-loop-func` → `no-loop-func`.** The core rule is now enabled in `baseRules`.
