@@ -21,8 +21,13 @@ it(`lints JavaScript, TypeScript, and modern JSX with the documented config`, as
       .split(`\n\x60\x60\x60js\n`)[2]
       ?.split(`\n\x60\x60\x60`)[0];
 
+    const ambient = readme
+      .split(`\n\x60\x60\x60ts\n`)[1]
+      ?.split(`\n\x60\x60\x60`)[0];
+
     assert.ok(usage);
     assert.ok(react);
+    assert.ok(ambient);
 
     const reactImports = react.split(`// ...`)[0];
     const reactConfig = react.split(`// ...`)[1];
@@ -48,6 +53,7 @@ it(`lints JavaScript, TypeScript, and modern JSX with the documented config`, as
         include: [`**/*`],
       }),
     );
+    await writeFile(path.join(directory, `types.d.ts`), `${ambient}\n`);
     await writeFile(
       path.join(directory, `valid.js`),
       `export const answer = 42;\n`,
@@ -70,8 +76,10 @@ it(`lints JavaScript, TypeScript, and modern JSX with the documented config`, as
       `valid.js`,
       `floating.ts`,
       `component.tsx`,
+      `eslint.config.mjs`,
+      `types.d.ts`,
     ]);
-    const [javascript, typescript, jsx] = results;
+    const [javascript, typescript, jsx, config, declaration] = results;
 
     assert.equal(javascript.errorCount, 0, JSON.stringify(javascript.messages));
     assert.ok(
@@ -86,6 +94,15 @@ it(`lints JavaScript, TypeScript, and modern JSX with the documented config`, as
         (message) => message.ruleId === `react/react-in-jsx-scope`,
       ),
     );
+
+    for (const result of [config, declaration]) {
+      assert.ok(
+        !result.messages.some(
+          (message) => message.ruleId === `import/no-default-export`,
+        ),
+        JSON.stringify(result.messages),
+      );
+    }
 
     const fixer = new ESLint({ cwd: directory, fix: true });
     const [fixed] = await fixer.lintFiles([`protocol.js`]);
