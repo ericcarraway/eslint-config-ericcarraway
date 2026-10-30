@@ -12,8 +12,14 @@ it(`lints JavaScript, TypeScript, and modern JSX with the documented config`, as
 
   try {
     const readme = await readFile(path.join(root, `README.md`), `utf8`);
-    const usage = readme.split(`\n\x60\x60\x60js\n`)[1]?.split(`\n\x60\x60\x60`)[0];
-    const react = readme.split(`\n\x60\x60\x60js\n`)[2]?.split(`\n\x60\x60\x60`)[0];
+
+    const usage = readme
+      .split(`\n\x60\x60\x60js\n`)[1]
+      ?.split(`\n\x60\x60\x60`)[0];
+
+    const react = readme
+      .split(`\n\x60\x60\x60js\n`)[2]
+      ?.split(`\n\x60\x60\x60`)[0];
 
     assert.ok(usage);
     assert.ok(react);
@@ -22,38 +28,64 @@ it(`lints JavaScript, TypeScript, and modern JSX with the documented config`, as
     const reactConfig = react.split(`// ...`)[1];
 
     assert.ok(reactConfig);
-    await writeFile(path.join(directory, `eslint.config.mjs`),
-      reactImports + usage.replace(/\);\s*$/u, `${reactConfig}\n);`));
-    await writeFile(path.join(directory, `tsconfig.json`), JSON.stringify({
-      compilerOptions: {
-        allowJs: true,
-        checkJs: true,
-        jsx: `react-jsx`,
-        module: `nodenext`,
-        noEmit: true,
-        strict: true,
-        target: `es2022`,
-      },
-      include: [`**/*`],
-    }));
-    await writeFile(path.join(directory, `valid.js`), `export const answer = 42;\n`);
-    await writeFile(path.join(directory, `floating.ts`),
-      `export function run(): void { Promise.resolve(1); }\n`);
-    await writeFile(path.join(directory, `component.tsx`),
-      `export function App() { return <div />; }\n`);
-    await writeFile(path.join(directory, `protocol.js`),
-      `import path from 'path';\nexport const separator = path.sep;\n`);
+
+    await writeFile(
+      path.join(directory, `eslint.config.mjs`),
+      reactImports + usage.replace(/\);\s*$/u, `${reactConfig}\n);`),
+    );
+    await writeFile(
+      path.join(directory, `tsconfig.json`),
+      JSON.stringify({
+        compilerOptions: {
+          allowJs: true,
+          checkJs: true,
+          jsx: `react-jsx`,
+          module: `nodenext`,
+          noEmit: true,
+          strict: true,
+          target: `es2022`,
+        },
+        include: [`**/*`],
+      }),
+    );
+    await writeFile(
+      path.join(directory, `valid.js`),
+      `export const answer = 42;\n`,
+    );
+    await writeFile(
+      path.join(directory, `floating.ts`),
+      `export function run(): void { Promise.resolve(1); }\n`,
+    );
+    await writeFile(
+      path.join(directory, `component.tsx`),
+      `export function App() { return <div />; }\n`,
+    );
+    await writeFile(
+      path.join(directory, `protocol.js`),
+      `import path from 'path';\nexport const separator = path.sep;\n`,
+    );
 
     const eslint = new ESLint({ cwd: directory });
-    const results = await eslint.lintFiles([`valid.js`, `floating.ts`, `component.tsx`]);
+    const results = await eslint.lintFiles([
+      `valid.js`,
+      `floating.ts`,
+      `component.tsx`,
+    ]);
     const [javascript, typescript, jsx] = results;
 
     assert.equal(javascript.errorCount, 0, JSON.stringify(javascript.messages));
-    assert.ok(typescript.messages.some((message) =>
-      message.ruleId === `@typescript-eslint/no-floating-promises`));
+    assert.ok(
+      typescript.messages.some(
+        (message) =>
+          message.ruleId === `@typescript-eslint/no-floating-promises`,
+      ),
+    );
     assert.equal(jsx.fatalErrorCount, 0, JSON.stringify(jsx.messages));
-    assert.ok(!jsx.messages.some((message) =>
-      message.ruleId === `react/react-in-jsx-scope`));
+    assert.ok(
+      !jsx.messages.some(
+        (message) => message.ruleId === `react/react-in-jsx-scope`,
+      ),
+    );
 
     const fixer = new ESLint({ cwd: directory, fix: true });
     const [fixed] = await fixer.lintFiles([`protocol.js`]);
