@@ -7,7 +7,7 @@ import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
 import stylistic from '@stylistic/eslint-plugin';
-import { Linter } from 'eslint';
+import { ESLint } from 'eslint';
 import { builtinRules } from 'eslint/use-at-your-own-risk';
 import importPlugin from 'eslint-plugin-import';
 import nPlugin from 'eslint-plugin-n';
@@ -146,18 +146,14 @@ for (const [ruleSetName, ruleSet] of ruleSetEntries) {
       }
     });
 
-    it(`configures valid rule options`, () => {
-      const linter = new Linter({ configType: `flat` });
+    it(`configures valid rule options`, async () => {
+      const eslint = new ESLint({
+        overrideConfig: { plugins, rules: ruleSet },
+        overrideConfigFile: true,
+      });
 
-      try {
-        linter.verify(``, [{ plugins, rules: ruleSet }], `file.js`);
-      } catch (error) {
-        const { message } = /** @type {Error} */ (error);
-
-        // Rules are validated before they run, so any error other than
-        // a configuration error comes from a rule that needs type information.
-        assert.doesNotMatch(message, /Configuration for rule|Key "rules"/u);
-      }
+      // Resolve and validate the config without executing type-aware rules.
+      assert.ok(await eslint.calculateConfigForFile(`file.js`));
     });
 
     if (ruleSetName.startsWith(`disabled`)) {
