@@ -155,6 +155,14 @@ export default defineConfig(
     files: ['**/*.{ts,tsx,mts,cts}'],
     rules: disabledTypescriptRedundantRules,
   },
+
+  {
+    // Flat configs & ambient module declarations require default exports.
+    files: ['eslint.config.mjs', '**/*.d.ts'],
+    rules: {
+      'import/no-default-export': 'off',
+    },
+  },
 );
 ```
 
@@ -196,7 +204,7 @@ rules: {
 
 ### TypeScript: `eslint-plugin-sort-destructure-keys` types
 
-`eslint-plugin-sort-destructure-keys` does not ship type declarations. If you type-check your `eslint.config.mjs`, add an ambient declaration (e.g. `types.d.ts`):
+`eslint-plugin-sort-destructure-keys` does not ship type declarations. If you type-check your `eslint.config.mjs`, add an ambient declaration in a file that your `tsconfig.json` includes (e.g. `src/types.d.ts` with the example above):
 
 ```ts
 declare module 'eslint-plugin-sort-destructure-keys' {
