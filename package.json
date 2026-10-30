@@ -23,7 +23,8 @@
     "prerelease": "./scripts/prerelease.sh",
     "shipit": "./scripts/publish.sh",
     "test": "npm run build && node --test && npm run typecheck && npm run lint",
-    "typecheck": "tsc -p tsconfig.json"
+    "typecheck": "tsc -p tsconfig.json",
+    "test:package": "node scripts/check-package.js"
   },
   "repository": {
     "type": "git",
