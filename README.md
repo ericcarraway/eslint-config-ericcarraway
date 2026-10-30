@@ -224,13 +224,13 @@ declare module 'eslint-plugin-sort-destructure-keys' {
 
 ## Development
 
-| Script              | Purpose                                                             |
-| ------------------- | ------------------------------------------------------------------- |
-| `npm run build`     | Generate `types/` from the JSDoc in `index.js` & `rules/*.js`       |
-| `npm test`          | Build, run the tests, type-check, and lint (this repo lints itself) |
-| `npm run typecheck` | Type-check the source & the published types                         |
+| Script                 | Purpose                                                                              |
+| ---------------------- | ------------------------------------------------------------------------------------ |
+| `npm run build`        | Generate `types/` from the JSDoc in `index.js` & `rules/*.js`                        |
+| `npm test`             | Build, run the tests, type-check, and lint (this repo lints itself)                  |
+| `npm run typecheck`    | Type-check the source & the published types                                          |
 | `npm run test:package` | Pack, install in an isolated consumer, and check runtime exports, types, and license |
-| `npm run lint`      | Lint this repo with its own rule sets                               |
+| `npm run lint`         | Lint this repo with its own rule sets                                                |
 
 The tests check that every rule set only configures rules that exist, are not deprecated, have valid options, and belong to its plugin namespace. Consumer tests exercise the README configuration with JavaScript, TypeScript, modern JSX, typed diagnostics, and the `node:` autofix. CI runs these checks and the tarball smoke test on the minimum supported Node 20 and 22 versions, and Node 24.
 
