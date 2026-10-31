@@ -2,7 +2,7 @@
 
 # Run this script from package.json via `npm run shipit`.
 
-# Prevent the script from exiting if commands fail and enable better error tracing
+# Exit on failed commands, including failures within pipelines
 set -e
 set -o pipefail
 
@@ -91,7 +91,11 @@ if [ "$REQUIRE_CLEAN_GIT" = "true" ] && command -v git &>/dev/null; then
     fi
 
     # Check if current commit has a tag matching the version
-    if ! git rev-parse "v$version" &>/dev/null; then
+    if tag_commit=$(git rev-parse --verify "refs/tags/v$version^{commit}" 2>/dev/null); then
+      if [ "$tag_commit" != "$(git rev-parse HEAD)" ]; then
+        error_exit "Tag v$version points to $tag_commit, not HEAD. Refusing to publish."
+      fi
+    else
       log_warning "Current commit is not tagged with v$version"
       read -p "Would you like to tag the current commit with v$version? (y/n) " -n 1 -r
       echo
